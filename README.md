@@ -1,6 +1,6 @@
 # CodeRef
 
-![Screen Shot 2017-10-17 at 3.38.27 PM](/Users/alex/Desktop/Screen Shot 2017-10-17 at 3.38.27 PM.png)
+![Screen Shot 2017-10-17 at 3.38.27 PM](./screenshots/Screen Shot 2017-10-17 at 3.38.27 PM.png)
 
 CodeRef or (CodeReference) is a MEAN Stack application built to help users find useful information about coding keywords. 
 
@@ -61,7 +61,7 @@ There are two package.json in the project, one in the root folder for the backen
 
 3. You know you successfully install the dependencies if you have a `node_modules` folder in the root directory and one inside the angular-src directory.
 
-   ![app](/Users/alex/Desktop/app.png)
+   ![app](./screenshots/app.png)
 
    ​
 
@@ -73,13 +73,13 @@ You need to do this everytime for the app to run properly.
 
 - In the root folder run `nodemon` you should get a message like this.
 
-![Screen Shot 2017-10-17 at 3.30.49 PM](/Users/alex/Desktop/Screen Shot 2017-10-17 at 3.30.49 PM.png)
+![Screen Shot 2017-10-17 at 3.30.49 PM](./screenshots/nodemon.png)
 
 - Open up a **new terminal** and cd into angular-src.
   - `cd angular-src`
   - `ng serve`
 
-![Screen Shot 2017-10-17 at 3.33.14 PM](/Users/alex/Desktop/Screen Shot 2017-10-17 at 3.33.14 PM.png)
+![Screen Shot 2017-10-17 at 3.33.14 PM](./screenshots/ng-serve.png)
 
 ## Issues
 
@@ -91,4 +91,4 @@ If you do not have a local mongoDB make sure the mlab database is not commented 
 
 **You can only have one commented at a time, switch if you need to use the local db or mlab.**
 
-![Screen Shot 2017-10-17 at 3.37.40 PM](/Users/alex/Desktop/Screen Shot 2017-10-17 at 3.37.40 PM.png)
+![Screen Shot 2017-10-17 at 3.37.40 PM](./screenshots/db.png)
