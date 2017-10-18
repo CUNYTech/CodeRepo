@@ -1,6 +1,6 @@
 # CodeRef
 
-![Screen Shot 2017-10-17 at 3.38.27 PM](./screenshots/Screen Shot 2017-10-17 at 3.38.27 PM.png)
+![Screen Shot 2017-10-17 at 3.38.27 PM](./screenshots/ui.png)
 
 CodeRef or (CodeReference) is a MEAN Stack application built to help users find useful information about coding keywords. 
 
