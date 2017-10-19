@@ -63,4 +63,17 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res,
   res.json({user: req.user});
 });
 
+//Forgot
+router.get('/forgot',(req,res,next) => {
+	
+	
+	
+});
+
+
+
+
+
+
+
 module.exports = router;

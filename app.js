@@ -8,10 +8,10 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 
-// Connect to database in the config file
-mongoose.connect(config.database);
+//connect to our database
+mongoose.connect(config.url);
 
-// On connection
+//// On connection
 mongoose.connection.on('connected', () => {
     console.log('Connected to database '+config.database );
 });
