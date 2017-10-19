@@ -5,7 +5,7 @@ module.exports = {
     // Mlab database
     // database: 'mongodb://admin1:admin1@ds161574.mlab.com:61574/coderef',
 
-    // local databse
+    // local database
     database: 'mongodb://localhost:27017/meanauth', 
     secret: 'yoursecret'
 }
