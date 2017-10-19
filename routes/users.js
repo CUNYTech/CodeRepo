@@ -13,14 +13,39 @@ router.post('/register', (req, res, next) => {
     username: req.body.username,
     password: req.body.password
   });
-
-  User.addUser(newUser, (err, user) => {
-    if(err){
-      res.json({success: false, msg:'Failed to register user'});
-    } else {
-      res.json({success: true, msg:'User registered'});
-    }
+  let errMsg = "";
+  User.getUserByUsername(newUser.username, (err, user) => {
+	    if(err) throw err;
+	    if(user){
+	      errMsg+="Username ";
+	    }
   });
+  User.getUserByEmail(newUser.email, (err, user) => {
+	    if(err) throw err;
+	    if(user){
+	    	if(errMsg==(""))
+	    	{
+	    		errMsg+="Email ";
+	    	}
+	    	else
+	    	{
+	    	  errMsg+="and Email ";
+	    	}
+	    }
+	    if(errMsg!=(""))
+	    	return res.json({success: false, msg:'exist'});
+	    else
+	    {
+	    	  User.addUser(newUser, (err, user) => {
+	    		    if(err){
+	    		      return res.json({success: false, msg:'Failed to register user'});
+	    		    } else {
+	    		      return res.json({success: true, msg:'User registered'});
+	    		    }
+	    		  });
+	    }
+});
+
 });
 
 // Authenticate
