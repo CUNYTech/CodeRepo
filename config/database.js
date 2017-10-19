@@ -8,6 +8,4 @@ module.exports = {
     // local database
     database: 'mongodb://localhost:27017/meanauth', 
     secret: 'yoursecret'
-    
-    //test
 }
