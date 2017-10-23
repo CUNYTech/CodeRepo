@@ -18,3 +18,17 @@
     color: white;
 }
 
+.icons {
+    display: inline-block;
+    color: #333;
+    margin: 0 auto;
+    padding: 3em;
+    /* background-color: #2196f3;
+    border-radius: 100%; */
+}
+
+.fa {
+    text-align: center;
+    font-size: 7em;
+}
+
