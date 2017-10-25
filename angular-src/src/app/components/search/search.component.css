@@ -55,9 +55,11 @@ li .row{
     }
 } */
 
-.search-box {
+.search-box,
+.search-list {
     float: none;
     margin: 0 auto;
     display: block;
     margin-top: 3em;
 }
+

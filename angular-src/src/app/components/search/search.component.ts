@@ -7,7 +7,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  search: String;
+  search:string;
+  searches:string[] = [];
 
   constructor(private flashMessage: FlashMessagesService) { }
 
@@ -16,10 +17,9 @@ export class SearchComponent implements OnInit {
 
   onSubmit(e){
     e.preventDefault();
-    let search = this.search;
-    console.log(search);
+    // console.log(search);
+    this.searches.unshift(this.search);
     this.search = '';
-    
 
   }
 
