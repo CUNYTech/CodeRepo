@@ -5,12 +5,10 @@ const Search = require('../models/search');
 
 // Search
 router.post('/search', (req, res, next) => {
-  let newSearch = new Search({
-    key: req.body.search
-  });
+
+  const key = req.body.search;
   
-  Search.getDefByKey(newSearch, (err, search) => {
-	  console.log(search);
+  Search.getDefByKey(key, (err, search) => {
 	    if(err) throw err;
 	    if(!search){
 	    	return res.json({success: false, msg:'Key does not exist!'});

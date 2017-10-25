@@ -15,8 +15,8 @@ const SearchSchema = mongoose.Schema({
     attDefinition: {
         type: String
     }
-});
-    //},{collection:'keyAtt'});
+//});
+    },{collection:'keyAtt'});
 
 const Search = module.exports = mongoose.model('Search', SearchSchema);
 
