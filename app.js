@@ -24,7 +24,7 @@ const app = express();
 
 const users = require('./routes/users');
 
-// variable for port 
+// variable for port
 const port = 3000;
 
 // CORS Middleware
