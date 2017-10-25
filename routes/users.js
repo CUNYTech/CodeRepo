@@ -4,7 +4,6 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
-const Search = require('../models/search');
 
 // Register
 router.post('/register', (req, res, next) => {
@@ -54,7 +53,7 @@ router.post('/register', (req, res, next) => {
 router.post('/authenticate', (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
-  User.getUserByUsername(username, (err, user) => {
+    User.getUserByUsername(username, (err, user) => {
 	    if(err) throw err;
 	    if(!user){
 	      return res.json({success: false, msg: 'User not found'});

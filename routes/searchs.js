@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
-const jwt = require('jsonwebtoken');
 const config = require('../config/database');
-const User = require('../models/user');
+const Search = require('../models/search');
 
 // Search
 router.post('/search', (req, res, next) => {
   let newSearch = new Search({
-    key: req.body.key,
+    key: req.body.search
   });
-  Search.getDefByKey(newSearch.key, (err, search) => {
+  
+  Search.getDefByKey(newSearch, (err, search) => {
+	  console.log(search);
 	    if(err) throw err;
 	    if(!search){
 	    	return res.json({success: false, msg:'Key does not exist!'});
@@ -23,7 +23,15 @@ router.post('/search', (req, res, next) => {
 	    		search[0].attDefinition += "---" + search[att].attDefinition;
 	    	}
 	    }
-	    
+	    res.json({
+	    	search:{
+	    		key:search[0].key,
+	    		definition:search[0].definition,
+	    		attribute:search[0].attribute,
+	    		attDefinition: search[0].attDefinition
+	    	}
+	    });
   });
-
 });
+
+module.exports = router;

@@ -1,22 +1,22 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
 // Search Schema
 const SearchSchema = mongoose.Schema({
     key: {
-        type: String,
+        type: String
     },
     definition: {
-        type: String,
+        type: String
     },
     attribute: {
-        type: String,
+        type: String
     },
     attDefinition: {
-        type: String,
+        type: String
     }
 });
+    //},{collection:'keyAtt'});
 
 const Search = module.exports = mongoose.model('Search', SearchSchema);
 
