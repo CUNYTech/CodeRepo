@@ -24,26 +24,17 @@ router.post('/register', (req, res, next) => {
   User.getUserByEmail(newUser.email, (err, user) => {
 	    if(err) throw err;
 	    if(user){
-	    	if(errMsg==(""))
-	    	{
-	    		errMsg+="Email ";
-	    	}
-	    	else
-	    	{
-	    	  errMsg+="and Email ";
-	    	}
+	    	return res.json({success: false, msg:'User or email exist!'});
 	    }
-	    if(errMsg!=(""))
-	    	return res.json({success: false, msg:'exist'});
 	    else
 	    {
-	    	  User.addUser(newUser, (err, user) => {
-	    		    if(err){
-	    		      return res.json({success: false, msg:'Failed to register user'});
-	    		    } else {
-	    		      return res.json({success: true, msg:'User registered'});
-	    		    }
-	    		  });
+    	  User.addUser(newUser, (err, user) => {
+    		    if(err){
+    		    	return res.json({success: false, msg:'User or email exist!'});
+    		    } else {
+    		        return res.json({success: true, msg:'User registered'});
+    		    }
+    		  });
 	    }
 });
 
