@@ -9,15 +9,7 @@ export class SearchService {
       {
         key: "html",
         definition: "HTML tag"
-      },
-      {
-        key: "input",
-        definition: "Input tag"
-      },
-      {
-        key: "form",
-        definition: "Form tag"
-      },
+      }
     ];
   }
 

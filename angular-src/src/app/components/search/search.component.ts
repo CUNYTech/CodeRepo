@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   constructor(
     private flashMessage: FlashMessagesService,
     private searchService: SearchService
-  ) { }
+  ) {}
 
   ngOnInit() {
   }
@@ -22,9 +22,9 @@ export class SearchComponent implements OnInit {
   onSubmit(e){
     e.preventDefault();
     // console.log(search);
+    this.search = this.searchService.getSearch();
     this.searches.unshift(this.search);
     this.search = '';
-
   }
 
 }
