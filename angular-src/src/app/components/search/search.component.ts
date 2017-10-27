@@ -10,7 +10,6 @@ import { SearchService } from '../../services/search.service';
 export class SearchComponent implements OnInit {
   search:any;
   searches:string[] = [];
-  isEmpty:boolean = true;
 
   constructor(
     private flashMessage: FlashMessagesService,
@@ -29,12 +28,17 @@ export class SearchComponent implements OnInit {
 
     if (this.search == '' || this.search == undefined || this.search == null) {
       this.flashMessage.show('Please submit a tag', {cssClass: 'alert-danger', timeout: 3000});
-      
     } else {
-      
-      this.isEmpty = false;
-  
       search = search.key.toLowerCase();
+
+      // Submit search to back-end
+      this.searchService.getSearch(search).subscribe(data => {
+        if(data.success){
+          console.log(data);
+        } else {
+          console.log(data);
+        }
+      });
     }
 
     console.log(search);
