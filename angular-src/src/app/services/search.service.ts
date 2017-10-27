@@ -2,14 +2,21 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SearchService {
-  searches:string[] = [];
+  searches:Searches[] = [];
 
   constructor() {
-    this.searches[] = [
+    this.searches = [
       {
-
+        key: "html",
+        definition: "asd"
       },
     ];
   }
 
 }
+
+interface Searches {
+  key:string,
+  definition:string
+}
+
