@@ -8,15 +8,26 @@ export class SearchService {
     this.searches = [
       {
         key: "html",
-        definition: "asd"
+        definition: "HTML tag"
+      },
+      {
+        key: "input",
+        definition: "Input tag"
+      },
+      {
+        key: "form",
+        definition: "Form tag"
       },
     ];
+  }
+
+  getSearch(){
+    return this.searches;
   }
 
 }
 
 interface Searches {
   key:string,
-  definition:string
+  definition:string,
 }
-
