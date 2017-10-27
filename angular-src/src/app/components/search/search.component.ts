@@ -23,13 +23,13 @@ export class SearchComponent implements OnInit {
   onSubmit(e){
     e.preventDefault();
     let search = {
-      key: this.search
+      search: this.search
     }
-
+    console.log(search);
     if (this.search == '' || this.search == undefined || this.search == null) {
       this.flashMessage.show('Please submit a tag', {cssClass: 'alert-danger', timeout: 3000});
     } else {
-      search = search.key.toLowerCase();
+      search = search.search.toLowerCase();
 
       // Submit search to back-end
       this.searchService.getSearch(search).subscribe(data => {
@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit {
       });
     }
 
-    console.log(search);
+    
     this.search = '';
 
     // this.search = this.searchService.getSearch();
