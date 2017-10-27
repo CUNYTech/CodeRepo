@@ -8,7 +8,7 @@ import { SearchService } from '../../services/search.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  search:string;
+  search:any;
   searches:string[] = [];
 
   constructor(
@@ -17,12 +17,14 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
   }
 
   onSubmit(e){
     e.preventDefault();
-    // console.log(search);
     this.search = this.searchService.getSearch();
+    console.log(this.search);
+    // this.search = this.searchService.getSearch();
     this.searches.unshift(this.search);
     this.search = '';
   }
