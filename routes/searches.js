@@ -9,9 +9,7 @@ router.post('/search', (req, res, next) => {
 	const key = req.body.search;
 	const keys = key.split(",");
 	let count = 0;
-	var result = {};
-	var jsonName = 'search';
-	result[jsonName] = [];
+	var result = [];
 	for (var index = 0; index < keys.length; index++) 
 	{		
 		Search.getDefByKey(keys[index], (err, search) => {
@@ -27,7 +25,7 @@ router.post('/search', (req, res, next) => {
 					search[0].attDefinition += "---" + search[att].attDefinition;
 				}
 			}
-			result[jsonName].push({key: search[0].key,definition: search[0].definition,attribute: search[0].attribute,attDefinition: search[0].attDefinition});
+			result.push({key: search[0].key,definition: search[0].definition,attribute: search[0].attribute,attDefinition: search[0].attDefinition});
 			count++;
 			if(count == keys.length)
 			{
