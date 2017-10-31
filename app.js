@@ -1,4 +1,5 @@
 // Main server entry file
+const dotenv = require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -7,9 +8,12 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
+// console.log(dotenv);
 
-// Connect to database in the config file
+// Connect to Mlab Db through dotenv
 mongoose.connect(config.database);
+
+// mongoose.connect(process.env.DB_LOCAL_DEV);
 
 // On connection
 mongoose.connection.on('connected', () => {
