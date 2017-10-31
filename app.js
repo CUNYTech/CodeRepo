@@ -7,6 +7,8 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
+// Dotenv
+require('dotenv').config();
 
 // Connect to database in the config file
 mongoose.connect(config.database);
