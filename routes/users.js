@@ -7,6 +7,7 @@ const User = require('../models/user');
 
 // Register
 router.post('/register', (req, res, next) => {
+
   let newUser = new User({
     name: req.body.name,
     email: req.body.email,
@@ -23,26 +24,17 @@ router.post('/register', (req, res, next) => {
   User.getUserByEmail(newUser.email, (err, user) => {
 	    if(err) throw err;
 	    if(user){
-	    	if(errMsg==(""))
-	    	{
-	    		errMsg+="Email ";
-	    	}
-	    	else
-	    	{
-	    	  errMsg+="and Email ";
-	    	}
+	    	return res.json({success: false, msg:'User or email exist!'});
 	    }
-	    if(errMsg!=(""))
-	    	return res.json({success: false, msg:'exist'});
 	    else
 	    {
-	    	  User.addUser(newUser, (err, user) => {
-	    		    if(err){
-	    		      return res.json({success: false, msg:'Failed to register user'});
-	    		    } else {
-	    		      return res.json({success: true, msg:'User registered'});
-	    		    }
-	    		  });
+    	  User.addUser(newUser, (err, user) => {
+    		    if(err){
+    		    	return res.json({success: false, msg:'User or email exist!'});
+    		    } else {
+    		        return res.json({success: true, msg:'User registered'});
+    		    }
+    		  });
 	    }
 });
 
@@ -52,14 +44,13 @@ router.post('/register', (req, res, next) => {
 router.post('/authenticate', (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
-
-  User.getUserByUsername(username, (err, user) => {
-    if(err) throw err;
-    if(!user){
-      return res.json({success: false, msg: 'User not found'});
-    }
-
-    User.comparePassword(password, user.password, (err, isMatch) => {
+    User.getUserByUsername(username, (err, user) => {
+	    if(err) throw err;
+	    if(!user){
+	      return res.json({success: false, msg: 'User not found'});
+	    }
+  
+     User.comparePassword(password, user.password, (err, isMatch) => {
       if(err) throw err;
       if(isMatch){
         const token = jwt.sign({ data: user }, config.secret, {
