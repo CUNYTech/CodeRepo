@@ -22,15 +22,16 @@ export class SearchComponent implements OnInit {
 
   onSubmit(e){
     e.preventDefault();
-    let search = {
-      search: this.search
-    }
-    console.log(search);
+    let search = '{"search": "'+this.search+'"}';
+    console.log(search);  
+    // console.log(search);
     if (this.search == '' || this.search == undefined || this.search == null) {
       this.flashMessage.show('Please submit a tag', {cssClass: 'alert-danger', timeout: 3000});
     } else {
-      search = search.search.toLowerCase();
-
+      search = search.toString();
+      console.log(typeof search);
+      // search = search.search.toLowerCase();
+      // search = "" + search + "";
       // Submit search to back-end
       this.searchService.getSearch(search).subscribe(data => {
         if(data.success){
