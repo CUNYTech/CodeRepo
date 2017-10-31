@@ -6,12 +6,14 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
+const dotenv = require('dotenv').config();
 
-// Dotenv
-require('dotenv').config();
+console.log(dotenv);
 
 // Connect to database in the config file
-mongoose.connect(config.database);
+// mongoose.connect(dotenv.DB_LOCAL_DEV);
+
+mongoose.connect(process.env.DB_LOCAL_DEV);
 
 // On connection
 mongoose.connection.on('connected', () => {
