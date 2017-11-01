@@ -19,36 +19,19 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  
   onSubmit(e){
     e.preventDefault();
     let search = '{"search": "'+this.search+'"}';
-    console.log(search);  
-    // console.log(search);
     if (this.search == '' || this.search == undefined || this.search == null) {
       this.flashMessage.show('Please submit a tag', {cssClass: 'alert-danger', timeout: 3000});
     } else {
-      search = search.toString();
-      console.log(typeof search);
-      // search = search.search.toLowerCase();
-      // search = "" + search + "";
-      // Submit search to back-end
       this.searchService.getSearch(search).subscribe(data => {
-        if(data.success){
-          console.log(data);
-        } else {
-          console.log(data);
+        for(let i = 0; i < data.length; i++){
+          this.searches.push(data[i]);
         }
       });
     }
-
-    
     this.search = '';
-
-    // this.search = this.searchService.getSearch();
-    // console.log(this.search);
-    // this.searches.unshift(this.search);
-
   }
-
 }

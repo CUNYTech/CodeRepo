@@ -1,4 +1,5 @@
 // Main server entry file
+const dotenv = require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -7,9 +8,13 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
+// Map global promise - get rid of warning
+mongoose.Promise = global.Promise;
 
-// Connect to database in the config file
-mongoose.connect(config.database);
+// Connect to Mlab Db through dotenv
+mongoose.connect(config.database, {
+    useMongoClient: true
+});
 
 // On connection
 mongoose.connection.on('connected', () => {

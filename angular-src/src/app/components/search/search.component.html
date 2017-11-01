@@ -5,19 +5,19 @@
           <div class="input-group input-group-lg">
             <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="search" name="search">
             <span class="input-group-btn">
-              <button class="btn btn-primary" type="button">Go!</button>
+              <button class="btn btn-primary"  (click)="onSubmit($event)" type="button">Go!</button>
             </span>
           </div>
       </div>
     </div>
-    <div class="row">
-      <div class="search-list col-md-6">
-        <ul class="list-group ">
-          <li class="list-group-item" *ngFor="let search of searches">
-            <h4>{{ search.key }}</h4>
-            <p>{{ search.definition }}</p>
-          </li>
-        </ul>
-      </div>
-    </div>
 </form>
+
+<div class="row">
+  <div class="search-list col-md-6">
+    <ul class="list-group ">
+      <li class="list-group-item">
+
+      </li>
+    </ul>
+  </div>
+</div>
