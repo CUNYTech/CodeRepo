@@ -11,7 +11,6 @@
     "bcryptjs": "*",
     "body-parser": "*",
     "cors": "*",
-
     "dotenv": "^4.0.0",
     "express": "*",
     "jsonwebtoken": "*",
@@ -20,5 +19,8 @@
     "passport-jwt": "*"
   },
   "author": "Alexander Melo",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.5.0"
+  }
 }
