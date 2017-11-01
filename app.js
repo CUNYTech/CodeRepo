@@ -8,8 +8,6 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
-// console.log(dotenv);
-
 // Connect to Mlab Db through dotenv
 mongoose.connect(config.database);
 
