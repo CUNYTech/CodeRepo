@@ -24,7 +24,3 @@ export class SearchService {
 
 }
 
-// interface SearchResult {
-//   key:string,
-//   definition:string,
-// }
