@@ -8,10 +8,13 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
-// Connect to Mlab Db through dotenv
-mongoose.connect(config.database);
+// Map global promise - get rid of warning
+mongoose.Promise = global.Promise;
 
-// mongoose.connect(process.env.DB_LOCAL_DEV);
+// Connect to Mlab Db through dotenv
+mongoose.connect(config.database, {
+    useMongoClient: true
+});
 
 // On connection
 mongoose.connection.on('connected', () => {
