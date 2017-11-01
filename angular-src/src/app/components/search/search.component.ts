@@ -24,13 +24,13 @@ export class SearchComponent implements OnInit {
 
   onSubmit(e){
     e.preventDefault();
-    let search = '{"search": "'+this.search+'"}';
+    let search = '{"search": "'+this.search.toUpperCase()+'"}';
     if (this.search == '' || this.search == undefined || this.search == null) {
       this.flashMessage.show('Please submit a tag', {cssClass: 'alert-danger', timeout: 3000});
     } else {
       this.searchService.getSearch(search).subscribe(data => {
         for(let i = 0; i < data.length; i++){
-          this.searches.push(data[i]);
+          this.searches.unshift(data[i]);
         }
       });
     }
