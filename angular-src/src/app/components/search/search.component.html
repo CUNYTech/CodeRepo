@@ -10,14 +10,15 @@
           </div>
       </div>
     </div>
-    <div class="row">
-      <div class="search-list col-md-6">
-        <ul class="list-group ">
-          <li class="list-group-item" *ngFor="let search of searches">
-            <h4>{{ search.key }}</h4>
-            <p>{{ search.definition }}</p>
-          </li>
-        </ul>
-      </div>
-    </div>
 </form>
+
+<div class="row">
+  <div class="search-list col-md-6">
+    <ul class="list-group ">
+      <li class="list-group-item" *ngFor="let search of searches">
+        <h4>{{ search.key }}</h4>
+        <p>{{ search.definition }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
