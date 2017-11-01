@@ -20,6 +20,8 @@ export class SearchComponent implements OnInit {
 
   }
 
+  // Current tags that work table, div
+
   onSubmit(e){
     e.preventDefault();
     let search = '{"search": "'+this.search+'"}';
