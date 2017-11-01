@@ -19,9 +19,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  // Current tags that work table, div
-
+  
   onSubmit(e){
     e.preventDefault();
     let search = '{"search": "'+this.search.toUpperCase()+'"}';
