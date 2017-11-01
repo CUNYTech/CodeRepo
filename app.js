@@ -1,4 +1,5 @@
 // Main server entry file
+const dotenv = require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -7,9 +8,15 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
+// Map global promise - get rid of warning
+mongoose.Promise = global.Promise;
 
-//connect to our database
-mongoose.connect(config.url);
+
+// Connect to Mlab Db through dotenv
+mongoose.connect(config.database, {
+    useMongoClient: true
+});
+
 
 //// On connection
 mongoose.connection.on('connected', () => {
@@ -24,7 +31,9 @@ const app = express();
 
 const users = require('./routes/users');
 
-// variable for port 
+const searches = require('./routes/searches');
+
+// variable for port
 const port = 3000;
 
 // CORS Middleware
@@ -43,6 +52,8 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 app.use('/users', users);
+
+app.use('/searches',searches);
 
 // Index Route
 app.get('/', (req, res) =>{

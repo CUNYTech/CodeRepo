@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search',
@@ -7,21 +8,30 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  search: string;
+  search:any;
+  searches:string[] = [];
 
-  constructor(private flashMessage: FlashMessagesService) { }
+  constructor(
+    private flashMessage: FlashMessagesService,
+    private searchService: SearchService
+  ) {}
 
   ngOnInit() {
-  }
 
+  }
+  
   onSubmit(e){
     e.preventDefault();
-
-    let search = this.search;
-    console.log(search);
+    let search = '{"search": "'+this.search+'"}';
+    if (this.search == '' || this.search == undefined || this.search == null) {
+      this.flashMessage.show('Please submit a tag', {cssClass: 'alert-danger', timeout: 3000});
+    } else {
+      this.searchService.getSearch(search).subscribe(data => {
+        for(let i = 0; i < data.length; i++){
+          this.searches.push(data[i]);
+        }
+      });
+    }
     this.search = '';
-    
-
   }
-
 }

@@ -11,10 +11,11 @@
     "bcryptjs": "*",
     "body-parser": "*",
     "cors": "*",
+
+    "dotenv": "^4.0.0",
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
-    "nodemailer": "^4.2.0",
     "passport": "*",
     "passport-jwt": "*"
   },
