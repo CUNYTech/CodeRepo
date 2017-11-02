@@ -1,5 +1,5 @@
 <form (submit)="onSubmit($event)">
-    <h1 class="search-title text-center">Search for HTML Tags</h1>
+    <h1 id="dashboard-search-title" class="search-title text-center">Search for HTML Tags</h1>
       <div class="row">
         <div class="col-md-6 search-box offset-md-4">
             <div class="input-group input-group-lg">
@@ -15,9 +15,14 @@
   <div class="row search-results">
     <div class="search-list col-md-6">
       <div class="card">
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let search of searches">
-            <h3 class="card-title">{{search.key}}</h3>
+        <ul id="search-list-group" class="list-group">
+          <li [@entriesAnim]="state" class="list-group-item" *ngFor="let search of searches; let i = index">
+            <div class="row search-item-top">
+              <h3 class="card-title">{{search.key}}</h3>
+              <button (click)="removeEntry(i)" type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div> <!-- /.row -->
             <hr>
             <h5 class="card-text">{{search.definition}}</h5>
           </li>
