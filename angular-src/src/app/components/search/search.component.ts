@@ -42,6 +42,9 @@ export class SearchComponent implements OnInit {
       this.flashMessage.show('Please submit a tag', {cssClass: 'alert-danger', timeout: 3000});
     } else {
       this.searchService.getSearch(search).subscribe(data => {
+        if (data.success === false){
+          this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 3000});
+        }
         for(let i = 0; i < data.length; i++){
           this.searches.unshift(data[i]);
         }
