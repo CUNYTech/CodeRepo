@@ -14,7 +14,7 @@ router.post('/search', (req, res, next) => {
 	{		
 		Search.getDefByKey(keys[index], (err, search) => {
 			if(err) throw err;
-			if(!search){
+			if(search == ""){
 				return res.json({success: false, msg:'Key does not exist!'});
 			}
 			for(att in search)
