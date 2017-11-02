@@ -1,11 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { SearchService } from '../../services/search.service';
+import { trigger,state,style,transition,animate,keyframes} from '@angular/animations';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+  animations: [
+    trigger('entriesAnim', [
+      state('active', style({
+        opacity: '1'
+      })),
+      transition('void => *', [
+        style({transform: 'translateX(-100%)', opacity: '0'}),
+        animate('700ms ease-in-out')
+      ]),
+      transition('* => void', [
+        animate('300ms ease-in-out', style({transform: 'translateX(100%)', opacity: '0'}))
+      ])
+    ])
+  ]
 })
 export class SearchComponent implements OnInit {
   search:any;
