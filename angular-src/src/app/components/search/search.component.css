@@ -29,6 +29,15 @@ h1.search-title{
     border-radius: .3rem !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
+.list-group-item h3{
+    margin: 11.5px 0 !important;
+}
+.list-group-item h5{
+    color: #757575;
+}
+.list-group-item hr{
+    border-top: 1px solid #BDBDBD !important;
+}
 .search-box,
 .search-list {
     float: none;
