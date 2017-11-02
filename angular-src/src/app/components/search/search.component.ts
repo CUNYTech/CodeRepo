@@ -25,6 +25,7 @@ import { trigger,state,style,transition,animate,keyframes} from '@angular/animat
 export class SearchComponent implements OnInit {
   search:any;
   searches:string[] = [];
+  state = 'active';
 
   constructor(
     private flashMessage: FlashMessagesService,
@@ -34,7 +35,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
 
   }
-  
+
   onSubmit(e){
     e.preventDefault();
     let search = '{"search": "'+this.search.toUpperCase()+'"}';
@@ -51,5 +52,9 @@ export class SearchComponent implements OnInit {
       });
     }
     this.search = '';
+  }
+
+  removeEntry(search) {
+    this.searches.splice(search, 1);
   }
 }

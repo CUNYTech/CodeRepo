@@ -1,82 +1,68 @@
-/* h1, h2, h3, h4, h5, h6, p{
-    margin: 0;
-    padding: 0;
-}
-#search-container{
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-}
-#entries-list h4, #entries-list p{
-    color: #626262;
-}
-#entries-list hr{
-    background-color: #D8D8D8;
-}
-#search-container .btn.btn-primary:hover{
-    cursor: pointer;
-}
-
-.input-group-lg > .form-control{
-    border-radius: .3rem 0 0 .3rem;
-}
-.btn-secondary{
-    border: none;
-    color: #212121;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-.btn-secondary:hover{
-    background-color: #BDBDBD;
-    cursor: pointer;
-}
-.search-title{
-    padding-top: 2em;
-}
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-ul li{
-    padding: 15px;
-    background-color: #fff;
-    border-radius: .3rem;
-    margin-bottom: 1em;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-li .row{
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-} */
-@media (max-width: 480px){
-    #search-container h1{
-        font-size: 8vw;
-    }
-}
-
-h1.search-title{
+/* Heading Styles */
+#dashboard-search-title{
     color: #fff;
     margin-top: 1em;
 }
+
+/* Form Styles */
 .form-control:focus{
     box-shadow: none !important;
 }
 .form-control.search-input[type=text], .form-control.search-input::placeholder{
     color: #fff;
 }
-.list-group-item{
-    margin-bottom: 1em;
-}
+
+/* Button Styles */
 .btn.btn-secondary{
     background-color: #fff;
     color: #666;
 }
 
+/* List-Group Row Styles */
+#search-list-group .row.search-item-top{
+    padding: 0 15px;
+    display: flex;
+}
+
+/* List-Item Styles */
+#search-list-group .list-group-item{
+    margin-bottom: 1em;
+    border-radius: .3rem !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+#search-list-group .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+#search-list-group .list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#search-list-group .list-group-item h3{
+    margin-top: 7.5px;
+    margin-bottom: 0;
+    margin-right: auto;
+}
+#search-list-group .list-group-item h5{
+    color: #757575;
+}
+#search-list-group .list-group-item hr{
+    border-top: 1px solid #BDBDBD !important;
+}
+
+/* Search-Box Styles */
 .search-box,
 .search-list {
     float: none;
     margin: 0 auto;
     display: block;
     margin-top: 3em;
+}
+
+/* Media Queries */
+@media (max-width: 768px){
+    h1.search-title{
+        font-size: 7vw;
+    }
 }
