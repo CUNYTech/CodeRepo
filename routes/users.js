@@ -79,4 +79,57 @@ router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res,
   res.json({user: req.user});
 });
 
+//Forgot
+router.get('/forgot',(req,res,next) => {
+	
+// res.json("password");
+	
+	const password1 = req.body.password1;
+	const password2 = req.body.password2;
+	
+	
+	if (password1 == password2){
+		
+		//res.json("sucess pasword matches");
+		
+		const email= req.body.email;
+			
+		User.getEmail(email, (err, User) => {
+		    // console.log(user)
+			if(err) {
+			
+			res.status(500).send(err);	
+				
+			} else  {
+			
+			User.password = password1;
+			
+				User.save((err, User) => {
+	            if (err) {
+	            	res.json(`err: ${err}`);
+	            
+	            }else{
+	            	
+	            res.json("sucess pasword changed");
+
+				}
+			});
+		
+		}
+	
+});
+			}  else {
+				
+				res.json("false");
+			}
+	
+	
+});
+
+
+
+
+
+
+
 module.exports = router;
