@@ -22,11 +22,11 @@ import { AuthGuard } from './guards/auth.guard';
 
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]}
+  {path: '', component: HomeComponent, data: { animation: 'home' }},
+  {path: 'register', component: RegisterComponent, data: { animation: 'register' }},
+  {path: 'login', component: LoginComponent, data: { animation: 'login' }},
+  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
+  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }}
 ]
 
 @NgModule({
