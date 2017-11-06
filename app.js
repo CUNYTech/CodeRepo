@@ -11,12 +11,14 @@ const config = require('./config/database');
 // Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
 
+
 // Connect to Mlab Db through dotenv
 mongoose.connect(config.database, {
     useMongoClient: true
 });
 
-// On connection
+
+//// On connection
 mongoose.connection.on('connected', () => {
     console.log('Connected to database '+config.database );
 });
