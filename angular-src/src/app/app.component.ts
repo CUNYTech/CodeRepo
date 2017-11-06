@@ -26,7 +26,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             height: '100%',
             transform: 'translateX(100%)'
           }),
-        ),
+          {optional:true}),
         group([
           // move page off screen right on leave
           query(':leave',
@@ -38,7 +38,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                 transform: 'translateX(-100%)'
               })
             ),
-          ),
+            {optional:true}),
           // move page in screen from left to right
           query(':enter',
             animate('500ms ease',
@@ -47,7 +47,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                 transform: 'translateX(0%)'
               })
             ),
-          ),
+            {optional:true}),
         ])
       ]),
       transition(`dashboard => home,
@@ -64,7 +64,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             height: '100%',
             transform: 'translateX(-100%)'
           }),
-        ),
+          {optional:true}),
         group([
           // move page off screen right on leave
           query(':leave',
@@ -76,7 +76,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                 transform: 'translateX(100%)'
               })
             ),
-          ),
+            {optional:true}),
           // move page in screen from left to right
           query(':enter',
             animate('500ms ease',
@@ -85,7 +85,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                 transform: 'translateX(0%)'
               })
             ),
-          ),
+            {optional:true}),
         ])
       ]),
       // More transitions here
