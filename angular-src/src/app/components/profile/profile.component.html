@@ -6,12 +6,13 @@
 
     </ul>
 </div> -->
-<div class="card" *ngIf="user">
-    <h1>{{user.name}}</h1>
-    <avatar [email]="email" [displayType]="'circle'">{{user.email}}</avatar>
-    <a href="#"><i class="fa fa-dribbble"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <p><button>Contact</button></p>
+<div class="card" style="width:400px">
+    <img class="card-img-top" src="https://placeimg.com/400/400/people" alt="Card image">
+    <div class="card-body">
+        <h4 class="card-title">{{user.name}}</h4>
+        <p class="card-text">{{user.username}}</p>
+        <p class="card-text">{{user.email}}</p>
+        <p class="card-text">Some example text.</p>
+        <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
 </div>

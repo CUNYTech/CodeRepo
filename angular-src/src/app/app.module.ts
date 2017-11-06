@@ -18,7 +18,7 @@ import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
-
+//import { AvatarModule } from "ng2-avatar";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
