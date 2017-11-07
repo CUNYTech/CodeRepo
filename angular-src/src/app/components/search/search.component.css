@@ -66,3 +66,7 @@
         font-size: 7vw;
     }
 }
+
+.card-title {
+    text-transform: lowercase;
+}
