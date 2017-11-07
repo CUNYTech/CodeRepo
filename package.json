@@ -15,6 +15,7 @@
     "express": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
+    "ng2-avatar": "^2.1.1",
     "passport": "*",
     "passport-jwt": "*"
   },

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+//import { AvatarModule } from "ng2-avatar";
 import { ProfileComponent } from './profile.component';
 
 describe('ProfileComponent', () => {

@@ -12,7 +12,13 @@ router.post('/register', (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    faceBook: req.body.faceBook,
+    twitter: req.body.twitter,
+    linkedin: req.body.linkedin,
+    google: req.body.google,
+    instagram: req.body.instagram
+    
   });
   let errMsg = "";
   User.getUserByUsername(newUser.username, (err, user) => {
