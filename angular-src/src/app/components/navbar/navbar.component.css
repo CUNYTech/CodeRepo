@@ -11,3 +11,8 @@
     background: #d9534f !important;
     box-shadow: 0 1px 10px 5px rgba(0,0,0, .2);
 }
+
+.navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}

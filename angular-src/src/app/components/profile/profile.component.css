@@ -1,0 +1,72 @@
+.profile-name-intro, .profile-name{
+    color: #fff !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.profile-name{
+    margin: 0;
+}
+.profile-name-intro{
+    margin: 0 0 5px 0;
+}
+.profile-pic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-bottom: 2.5em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+.row.profile-header{
+    background-color: rgb(52, 116, 189);
+}
+.profile-header .col-md-12.profile-info{
+    margin: 3em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-header-icons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    width: 27.5%;
+}
+.social-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Media-Queries */
+@media screen and (max-width: 1199px){
+    .social-icon{
+        height: 40px;
+    }
+}
+@media screen and (max-width: 991px){
+    .social-icon{
+        width: 6vw;
+        height: 6vw;
+    }
+    .profile-header-icons{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 767px){
+    .social-icon{
+        width: 8vw;
+        height: 8vw;
+    }
+    .profile-header-icons{
+        width: 60%;
+    }
+    .profile-name{
+        font-size: 8vw;
+    }
+    .profile-name-intro{
+        font-size: 4vw;
+    }
+}

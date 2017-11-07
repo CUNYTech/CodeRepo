@@ -14,7 +14,7 @@ import { trigger,state,style,transition,animate,keyframes} from '@angular/animat
       })),
       transition('void => *', [
         style({transform: 'translateX(-100%)', opacity: '0'}),
-        animate('700ms ease-in-out')
+        animate('300ms ease-in-out')
       ]),
       transition('* => void', [
         animate('300ms ease-in-out', style({transform: 'translateX(100%)', opacity: '0'}))
@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
+    
   }
 
   onSubmit(e){

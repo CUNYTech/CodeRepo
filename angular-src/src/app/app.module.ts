@@ -19,14 +19,14 @@ import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
-//import { AvatarModule } from "ng2-avatar";
+import { SearchHistoryComponent } from './components/search-history/search-history.component';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]}
+  {path: '', component: HomeComponent, data: { animation: 'home' }},
+  {path: 'register', component: RegisterComponent, data: { animation: 'register' }},
+  {path: 'login', component: LoginComponent, data: { animation: 'login' }},
+  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
+  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }}
 ]
 
 @NgModule({
@@ -38,7 +38,8 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    SearchHistoryComponent
   ],
   imports: [
     BrowserModule,
