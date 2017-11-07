@@ -1,9 +1,20 @@
 <div class="container">
-  <div *ngIf="user">
-    <h2 class="page-header">Hello {{user.name}}</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Username: {{user.username}}</li>
-      <li class="list-group-item">Email: {{user.email}}</li>
-    </ul>
-  </div>
+    <!-- <div *ngIf="user">
+        <h2 class="page-header">Hello {{user.name}}</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Username: {{user.username}}</li>
+            <li class="list-group-item">Email: {{user.email}}</li>
+
+        </ul>
+    </div>  -->
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="https://placeimg.com/400/400/people" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">{{user.name}}</h4>
+            <p class="card-text">{{user.username}}</p>
+            <p class="card-text">{{user.email}}</p>
+            <p class="card-text">Some example text.</p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+    </div>
 </div>
