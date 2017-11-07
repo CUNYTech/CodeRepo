@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
+    
   }
 
   onSubmit(e){
