@@ -19,6 +19,7 @@ import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
+import { SearchHistoryComponent } from './components/search-history/search-history.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    SearchHistoryComponent
   ],
   imports: [
     BrowserModule,
