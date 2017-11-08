@@ -22,7 +22,10 @@
 }
 
 .row.profile-header {
-    background-color: rgb(52, 116, 189);
+    /*background-color: rgb(52, 116, 189);*/
+    background-image: url('https://images.unsplash.com/photo-1501791330673-603715379ded?auto=format&fit=crop&w=750&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+    background-size: cover;
+    background-position: center;
 }
 
 .profile-header .col-md-12.profile-info {
@@ -45,11 +48,11 @@
     height: 50px;
     border-radius: 50%;
     /*background-color: #ccc;*/
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .avatar {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
 }
 
