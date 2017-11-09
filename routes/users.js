@@ -164,10 +164,7 @@ router.get('/forgot',(req,res,next) => {
 
 //test route to check if code works
 router.post('/test',(req, res, next) => {
-  
-	
-	
-	//res.json({user: req.user});
+ 
   
   User.getUserByUsername(req.body.user, (err, User) => {  
 	    // Handle any possible database errors
