@@ -8,16 +8,20 @@
     background-position: center center;
     background-size: cover;
     color: white;
-    padding-top: 10em;
+    /* padding-top: 10em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     
 }
 
-@media screen and (min-width: 1064px) {
+/* @media screen and (min-width: 1064px) {
     .banner {
         background-attachment: fixed;
     }
-}
+} */
 
 .banner h1 {
     color: white;
