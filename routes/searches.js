@@ -6,7 +6,8 @@ const Search = require('../models/search');
 // Search
 router.post('/search', (req, res, next) => {
 	const type = req.body.type;
-	if(type == "HTML")
+	console.log(type);
+	if(type == "HTML" || type == undefined)
 	{
 		const key = req.body.search;
 		const keys = key.split(",");
