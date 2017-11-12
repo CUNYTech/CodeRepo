@@ -21,6 +21,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
 import { SearchHistoryComponent } from './components/search-history/search-history.component';
 
+import { AvatarModule } from "ng2-avatar";
+
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
   {path: 'register', component: RegisterComponent, data: { animation: 'register' }},
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AvatarModule.forRoot()
   ],
   providers: [ValidateService, AuthService, AuthGuard, SearchService],
   bootstrap: [AppComponent]
