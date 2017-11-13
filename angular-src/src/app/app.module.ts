@@ -22,6 +22,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { SearchHistoryComponent } from './components/search-history/search-history.component';
 
 import { AvatarModule } from "ng2-avatar";
+import { SearchHistoryListComponent } from './components/search-history-list/search-history-list.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     SearchComponent,
-    SearchHistoryComponent
+    SearchHistoryComponent,
+    SearchHistoryListComponent
   ],
   imports: [
     BrowserModule,

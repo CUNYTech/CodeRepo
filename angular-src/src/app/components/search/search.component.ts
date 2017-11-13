@@ -24,7 +24,7 @@ import { trigger,state,style,transition,animate,keyframes} from '@angular/animat
 })
 export class SearchComponent implements OnInit {
   search:any;
-  searches:string[] = [];
+  searches:any[] = [];
   state = 'active';
 
   constructor(
@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    
+
   }
 
   onSubmit(e){
@@ -48,6 +48,7 @@ export class SearchComponent implements OnInit {
         }
         for(let i = 0; i < data.length; i++){
           this.searches.unshift(data[i]);
+          this.searchService.historyResults.unshift(this.searches[i].key.toLowerCase());
         }
       });
     }
