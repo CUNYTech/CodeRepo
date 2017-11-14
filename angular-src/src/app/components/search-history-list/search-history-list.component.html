@@ -1,19 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 history-col">
-      <h2 class="search-history-title">Search History</h2>
-      <ul id="search-history-list" class="list-group">
-        <li class="list-group-item history" *ngFor="let historyResult of historyResults; let i = index">
-          <div class="row search-history-item">
-            <a [routerLink]="['/dashboard']">
-              <p class="card-title">{{ this.searchService.historyResults[i] }}</p>
-            </a>
-            <button (click)="removeEntry(i)" type="button" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div> <!-- /.row -->
-        </li>
-      </ul>
-    </div><!-- .col-md-12.history-col -->
-  </div><!-- .row -->
-</div><!-- .container -->
+
+<div class="search-history">
+  <h2 class="search-history-title">Search History</h2>
+  <ul id="search-history-list" class="list-group">
+    <li class="list-group-item history" *ngFor="let historyResult of historyResults; let i = index">
+      <div class="row search-history-item">
+        <a [routerLink]="['/dashboard']">
+          <p class="card-title">{{ this.searchService.historyResults[i] }}</p>
+        </a>
+        <button (click)="removeEntry(i)" type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> <!-- /.row -->
+    </li>
+  </ul>
+</div>
