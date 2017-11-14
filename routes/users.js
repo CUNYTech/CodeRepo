@@ -82,37 +82,9 @@ router.post('/authenticate', (req, res, next) => {
 
 // Profile
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
-  
-	
+  	
 	res.json({user: req.user});
-  
-//  User.getUserByUsername(req.body.user, (err, User) => {  
-//	    // Handle any possible database errors
-//	    if (err) {
-//	        //res.status(500).send(err);
-//	    	res.json("error finding user");
-//	    	re
-//	    } else {
-//	    	
-//	    	User.faceBook =  req.body.faceBook
-//	    	User.twitter = req.body.twitter
-//	    	User.linkedin = req.body.linkedin
-//	    	User.google = req.body.google
-//	    	User.instagram = req.body.instagram
-//	    
-//	    	User.save((err, User) => {
-//	            if (err) {
-//	                //res.status(500).send(err)
-//	            	res.json("cannot update");
-//	            }
-//	            //res.status(200).send(User);
-//	            res.json("changed");
-//	        });
-//      
-//      
-//	    }
-//  });
-// 
+ 
 });
 
 //Forgot
