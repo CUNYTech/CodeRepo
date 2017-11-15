@@ -2,28 +2,26 @@
 <div class="container inner">
     <div class="row dashboard-title">
         <div class="col-md-12 dashboard-title">
-            <h3 id="dashboard-title-left" class="dashboard-title">{{ titleLeft }}</h3>
-            <h3 id="dashboard-title-mid" class="dashboard-title">{{ titleMid }}</h3>
-            <h3 id="dashboard-title-right" class="dashboard-title">{{ titleRight }}</h3>
+            <h3 class="dashboard-title">{{ titleText }}</h3>
         </div>
     </div><!-- .row -->
     <div class="row dashboard-btns">
         <div class="col-md-4">
-            <div class="dashboard-btn find" (mouseenter)="findBtnEnter()" (mouseleave)="findBtnLeave()">
+            <div class="dashboard-btn find" (mouseenter)="findBtnEnter()" (mouseleave)="btnLeave()">
                 <p class="btn-text-top">Find</p>
                 <hr>
                 <p>Resource</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="dashboard-btn post" (mouseenter)="postBtnEnter()" (mouseleave)="postBtnLeave()">
+            <div class="dashboard-btn post" (mouseenter)="postBtnEnter()" (mouseleave)="btnLeave()">
                 <p class="btn-text-top">Post</p>
                 <hr>
                 <p>Resource</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="dashboard-btn search" (mouseenter)="searchBtnEnter()" (mouseleave)="searchBtnLeave()">
+            <div class="dashboard-btn search" (mouseenter)="searchBtnEnter()" (mouseleave)="btnLeave()">
                 <p class="btn-text-top">Search</p>
                 <hr>
                 <p>Tags</p>

@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  titleLeft:string = "Find";
-  titleMid:string = "the code references";
-  titleRight:string = "you're looking for.";
+  titleText:string = "Find the code references you're looking for.";
   
   constructor() { }
 
@@ -16,29 +14,15 @@ export class DashboardComponent implements OnInit {
   }
 
   findBtnEnter(){
-    this.titleMid = "the resources";
-  }
-  findBtnLeave(){
-    this.titleMid = "the code references";
+    this.titleText = "Find the resources you're looking for.";
   }
   postBtnEnter(){
-    this.titleLeft = "Post";
-    this.titleMid = "the resources";
-    this.titleRight = "you'd like.";
-  }
-  postBtnLeave(){
-    this.titleLeft = "Find";
-    this.titleMid = "the code references";
-    this.titleRight = "you're looking for.";
+    this.titleText = "Post the resources you'd like.";
   }
   searchBtnEnter(){
-    this.titleLeft = "Search";
-    this.titleMid = "for the tags";
-    this.titleRight = "you need.";
+    this.titleText = "Search for the tags you need.";
   }
-  searchBtnLeave(){
-    this.titleLeft = "Find";
-    this.titleMid = "the code references";
-    this.titleRight = "you're looking for.";
+  btnLeave(){
+    this.titleText = "Find the code references you're looking for.";
   }
 }
