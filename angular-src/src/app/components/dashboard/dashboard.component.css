@@ -9,24 +9,43 @@
     background: linear-gradient(to bottom,  #03a9f4 0%,#0288d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#0288d1',GradientType=0 ); /* IE6-9 */
 }
-.container-fluid.dashboard-options .row{
-    background-color: #d9534f;
+.container-fluid.dashboard-options{
+    background-color: #f8f8f8;
+}
+.container.inner{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
 }
 .row.dashboard-options-title{
     text-align: center;
 }
+.row.dashboard-btns{
+    width: 100%;
+}
 .dashboard-options-title{
     color: #fff;
 }
-.container-fluid.dashboard-options .col-md-4{
+.container.inner .col-md-12.dashboard-title{
     display: flex;
-    height: 350px;
+    justify-content: center;
+}
+.col-md-12.dashboard-title .dashboard-title{
+    margin: 1em 0 0 0;
+}
+#dashboard-container .col-md-4{
+    display: flex;
+    padding: 3em 0 4em 0;
     justify-content: center;
     align-items: center;
 }
 .dashboard-btn{
     width: 80%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 150px;
@@ -36,4 +55,33 @@
     color: #666;
     border-radius: .3rem;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    transition: all 300ms ease;
+}
+.btn-text-top{
+    color: #03a9f4;
+}
+.dashboard-btn:hover{
+    background-color: #03a9f4;
+    cursor: pointer;
+}
+.dashboard-btn:hover p{
+    color: #fff;
+}
+.dashboard-btn:hover hr{
+    border-color: #fff;
+}
+.dashboard-btn p{
+    margin: 0;
+    transition: all 300ms ease;
+}
+.dashboard-btn hr{
+    margin: 0;
+    width: 45%;
+    border-top: 1px solid #ccc;
+}
+#dashboard-title-mid{
+    margin-left: .25em;
+    margin-right: .25em;
+    color: #03a9f4;
+    transition: all 300ms ease;
 }

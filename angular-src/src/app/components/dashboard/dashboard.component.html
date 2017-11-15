@@ -1,29 +1,35 @@
 <div id="dashboard-container" class="container-fluid">
-    <!-- <app-search></app-search> -->
-    <div class="container-fluid dashboard-options">
-        <div class="container">
-        <div class="row dashboard-options-title">
-            <div class="col-md-12">
-                <h2 class="dashboard-options-title">Dashboard Choices</h2>
+    <div class="container inner">
+        <div class="row dashboard-title">
+            <div class="col-md-12 dashboard-title">
+                <h3 id="dashboard-title-left" class="dashboard-title">{{ titleLeft }}</h3>
+                <h3 id="dashboard-title-mid" class="dashboard-title">{{ titleMid }}</h3>
+                <h3 id="dashboard-title-right" class="dashboard-title">{{ titleRight }}</h3>
             </div>
         </div><!-- .row -->
-        <div class="row">
+        <div class="row dashboard-btns">
             <div class="col-md-4">
-                <div class="dashboard-btn">
-                   Find<br>Resource
+                <div class="dashboard-btn find" (mouseenter)="findBtnEnter()" (mouseleave)="findBtnLeave()">
+                    <p class="btn-text-top">Find</p>
+                    <hr>
+                    <p>Resource</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="dashboard-btn">
-                    Post<br>Resource
+                <div class="dashboard-btn post" (mouseenter)="postBtnEnter()" (mouseleave)="postBtnLeave()">
+                    <p class="btn-text-top">Post</p>
+                    <hr>
+                    <p>Resource</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="dashboard-btn">
-                Search<br>Tags
+                <div class="dashboard-btn search" (mouseenter)="searchBtnEnter()" (mouseleave)="searchBtnLeave()">
+                    <p class="btn-text-top">Search</p>
+                    <hr>
+                    <p>Tags</p>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
+        </div><!-- .row -->
+    </div><!-- .container.inner -->
+    <!-- <app-search></app-search> -->
 </div>
