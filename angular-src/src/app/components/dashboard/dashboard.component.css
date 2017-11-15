@@ -9,6 +9,9 @@
     /* background: linear-gradient(to bottom,  #03a9f4 0%,#0288d1 100%); */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#0288d1',GradientType=0 ); */ /* IE6-9 */
 /* } */
+a, a:hover, a:focus, a:visited, a:active{
+    text-decoration: none;
+}
 .container.inner{
     height: calc(100vh - 64px);
     display: flex;
@@ -36,13 +39,18 @@
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 .container.inner .col-md-4{
-    display: flex;
     padding: 3em 0 4em 0;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.dashboard-btn{
+.container.inner .col-md-4 a{
     width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.dashboard-btn{
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
