@@ -1,24 +1,21 @@
-#dashboard-container{
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
+/* #dashboard-container{ */
+    /* padding: 0; */
+    /* width: 100%; */
+    /* min-height: 100vh; */
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#03a9f4+0,0288d1+100 */
-    background: #03a9f4; /* Old browsers */
-    background: -moz-linear-gradient(top,  #03a9f4 0%, #0288d1 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #03a9f4 0%,#0288d1 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #03a9f4 0%,#0288d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#0288d1',GradientType=0 ); /* IE6-9 */
-}
-.container-fluid.dashboard-options{
-    background-color: #f8f8f8;
-}
+    /* background: #03a9f4; */ /* Old browsers */
+    /* background: -moz-linear-gradient(top,  #03a9f4 0%, #0288d1 100%); */ /* FF3.6-15 */
+    /* background: -webkit-linear-gradient(top,  #03a9f4 0%,#0288d1 100%); */ /* Chrome10-25,Safari5.1-6 */
+    /* background: linear-gradient(to bottom,  #03a9f4 0%,#0288d1 100%); */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#0288d1',GradientType=0 ); */ /* IE6-9 */
+/* } */
 .container.inner{
-    height: 100vh;
+    height: calc(100vh - 64px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 .row.dashboard-options-title{
     text-align: center;
@@ -34,9 +31,11 @@
     justify-content: center;
 }
 .col-md-12.dashboard-title .dashboard-title{
+    color: #fff;
     margin: 1em 0 0 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
-#dashboard-container .col-md-4{
+.container.inner .col-md-4{
     display: flex;
     padding: 3em 0 4em 0;
     justify-content: center;
@@ -51,7 +50,7 @@
     height: 150px;
     text-align: center;
     font-size: 2em;
-    background-color: white;
+    background-color: #fff;
     color: #666;
     border-radius: .3rem;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -82,6 +81,4 @@
 #dashboard-title-mid{
     margin-left: .25em;
     margin-right: .25em;
-    color: #03a9f4;
-    transition: all 300ms ease;
 }
