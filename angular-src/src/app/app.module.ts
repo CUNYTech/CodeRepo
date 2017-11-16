@@ -29,6 +29,7 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent, data: { animation: 'register' }},
   {path: 'login', component: LoginComponent, data: { animation: 'login' }},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
+  {path: 'search', component: SearchComponent, data: { animation: 'search' }},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }}
 ]
 
