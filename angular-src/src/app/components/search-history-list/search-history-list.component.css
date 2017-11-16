@@ -1,3 +1,6 @@
+#search-history-list-con{
+    background-color: #fff;
+}
 #search-history-list{
     display: flex;
     flex-wrap: wrap;
