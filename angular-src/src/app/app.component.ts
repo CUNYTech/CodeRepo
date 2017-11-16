@@ -7,16 +7,17 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('routerAnimation', [
-      transition(`home => dashboard,
+      transition(`home => search,
                   home => profile,
                   home => login,
                   home => register,
                   dashboard => login,
                   dashboard => profile,
+                  search => profile,
                   profile => login,
                   login => register,
-                  login => dashboard,
-                  register => dashboard,
+                  login => search,
+                  register => search,
                   register => profile`, [
         // Initial state of new route
         query(':enter',
@@ -50,10 +51,10 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             {optional:true}),
         ])
       ]),
-      transition(`dashboard => home,
+      transition(`search => home,
                   register => login,
-                  profile => dashboard,
                   profile => home,
+                  profile => search,
                   login => home,
                   register => home`, [
         // Initial state of new route
