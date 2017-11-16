@@ -16,6 +16,7 @@
     color: #fff;
     margin: 0;
     padding-top: 1em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Form Styles */
@@ -39,6 +40,13 @@
 }
 
 /* List-Item Styles */
+.card-title {
+    text-transform: lowercase;
+}
+.card-text{
+    font-size: 1.25em;
+    margin: 0 0 .5em 0;
+}
 #search-list-group .list-group-item{
     margin-bottom: 1em;
     border-radius: .3rem !important;
@@ -79,8 +87,4 @@
     h1.search-title{
         font-size: 7vw;
     }
-}
-
-.card-title {
-    text-transform: lowercase;
 }
