@@ -1,6 +1,6 @@
-<div id="search-container">
+<div id="search-container" class="container">
   <form (submit)="onSubmit($event)">
-    <h1 id="dashboard-search-title" class="search-title text-center">Search for HTML Tags</h1>
+    <h2 id="dashboard-search-title" class="search-title text-center">Search for HTML Tags</h2>
       <div class="row">
         <div class="col-md-6 search-box offset-md-4">
             <div class="input-group input-group-lg">
@@ -14,7 +14,7 @@
   </form>
 
   <div class="row search-results">
-    <div class="search-list col-md-6">
+    <div class="search-list col-md-6 offset-md-4">
       <div class="card">
         <ul id="search-list-group" class="list-group">
           <li [@entriesAnim]="state" class="list-group-item" *ngFor="let search of searches; let i = index">
