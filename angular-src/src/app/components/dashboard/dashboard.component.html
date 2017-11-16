@@ -1,3 +1,38 @@
-<div id="search-container" class="container-fluid">
-    <app-search></app-search>
-</div>
+
+<div class="container inner">
+    <div class="row dashboard-title">
+        <div class="col-md-12 dashboard-title">
+            <h3 class="dashboard-title">{{ titleText }}</h3>
+        </div>
+    </div><!-- .row -->
+    <div class="row dashboard-btns">
+        <div class="col-md-4">
+            <a href="#">
+                <div class="dashboard-btn find" (mouseenter)="findBtnEnter()" (mouseleave)="btnLeave()">
+                    <p class="btn-text-top">Find</p>
+                    <hr>
+                    <p>Resource</p>
+                </div>
+            </a>
+        </div><!-- .col-md-4 -->
+        <div class="col-md-4">
+            <a href="#">
+                <div class="dashboard-btn post" (mouseenter)="postBtnEnter()" (mouseleave)="btnLeave()">
+                    <p class="btn-text-top">Post</p>
+                    <hr>
+                    <p>Resource</p>
+                </div>
+            </a>
+        </div><!-- .col-md-4 -->
+        <div class="col-md-4">
+            <a [routerLink]="['/search']">
+                <div class="dashboard-btn search" (mouseenter)="searchBtnEnter()" (mouseleave)="btnLeave()">
+                    <p class="btn-text-top">Search</p>
+                    <hr>
+                    <p>Tags</p>
+                </div>
+            </a>
+        </div><!-- .col-md-4 -->
+    </div><!-- .row -->
+</div><!-- .container.inner -->
+<!-- <app-search></app-search> -->

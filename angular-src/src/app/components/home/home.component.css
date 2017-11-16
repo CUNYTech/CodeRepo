@@ -1,35 +1,38 @@
-.banner {
+#home-container{
+    background-image: url('https://images.unsplash.com/photo-1485003975062-9946bdb9dbae?auto=format&fit=crop&w=1500&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0,0,0, .5);
+    background-blend-mode: multiply;
+}
+/* .banner{
     width: 100%;
     height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1454165205744-3b78555e5572?dpr=1&auto=format&fit=crop&w=2850&q=60&cs=tinysrgb');
+    background-image: url('https://images.unsplash.com/photo-1454165205744-3b78555e5572?dpr=1&auto=format&fit=crop&w=2850&q=60&cs=tinysrgb'); */
     /* background-image: url('https://www.videvo.net/videvo_files/converted/2015_10/videos/Typing_light_01_Videvo.mov82329.mp4'); */
-    background-color: rgba(0,0,0, .5);
+    /* background-color: rgba(0,0,0, .5);
     background-blend-mode: multiply;
     background-position: center center;
     background-size: cover;
-    color: white;
+    color: white; */
     /* padding-top: 10em; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
-    
-}
-
+} */
 /* @media screen and (min-width: 1064px) {
     .banner {
         background-attachment: fixed;
     }
 } */
-
-.banner h1 {
+.banner h1{
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.2em;
 }
-
-.icons {
+.icons{
     display: inline-block;
     color: #333;
     margin: 0 auto;
@@ -37,8 +40,7 @@
     /* background-color: #2196f3;
     border-radius: 100%; */
 }
-
-.fa {
+.fa{
     text-align: center;
     font-size: 5em;
 }
