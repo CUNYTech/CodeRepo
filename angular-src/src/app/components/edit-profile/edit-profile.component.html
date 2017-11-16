@@ -1,34 +1,28 @@
 <!-- Form subscription -->
-<form>
+<form (submit)="onSubmit($event)">
     <p class="h5 text-center mb-4">Subscribe</p>
 
     <div class="md-form">
         <i class="fa fa-picture-o fa-3x prefix grey-text"></i>
-        <input type="text" id="form3" class="form-control">
+        <input type="text" id="form3" class="form-control" [(ngModel)]="imgUrl" name="imgUrl">
         <label for="form3">Your image</label>
     </div>
 
     <div class="md-form">
         <i class="fa fa-facebook-square fa-3x prefix grey-text"></i>
-        <input type="text" id="form2" class="form-control">
+        <input type="text" id="form2" class="form-control" [(ngModel)]="facebookUrl" name="facebookUrl">
         <label for="form2">Facebook link</label>
     </div>
 
     <div class="md-form">
         <i class="fa fa-twitter-square fa-3x prefix grey-text"></i>
-        <input type="text" id="form2" class="form-control">
+        <input type="text" id="form2" class="form-control" [(ngModel)]="twitterUrl" name="twitterUrl">
         <label for="form2">Twitter link</label>
     </div>
 
     <div class="md-form">
-        <i class="fa fa-google-plus-square fa-3x prefix grey-text"></i>
-        <input type="text" id="form2" class="form-control">
-        <label for="form2">G Plus link</label>
-    </div>
-
-    <div class="md-form">
         <i class="fa fa-instagram fa-3x prefix grey-text"></i>
-        <input type="text" id="form2" class="form-control">
+        <input type="text" id="form2" class="form-control" [(ngModel)]="igUrl" name="igUrl">
         <label for="form2">IG link</label>
     </div>
 
