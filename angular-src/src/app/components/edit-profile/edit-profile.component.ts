@@ -12,4 +12,8 @@ export class EditProfileComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(e){
+
+  }
+
 }
