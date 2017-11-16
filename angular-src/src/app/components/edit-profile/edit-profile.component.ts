@@ -13,7 +13,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit(e){
-
+    console.log();
   }
 
 }
