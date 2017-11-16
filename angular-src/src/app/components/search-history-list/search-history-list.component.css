@@ -12,9 +12,10 @@
 .search-history-title{
     text-align: center;
     margin: 1.5em 0;
+    margin-top: 0;
 }
 .list-group-item.history{
-    width: 18.5%;
+    /* width:100%; */
     margin-right: 1.875%;
     border-radius: 23px;
     padding: 0;
@@ -23,9 +24,7 @@
 .list-group-item.history:nth-child(5n){
     margin-right: 0;
 }
-.list-group-item.history:nth-child(n+6){
-    margin-top: 1.5em;
-}
+
 .list-group-item.history > a > .search-history-item{
     display: flex;
     width: 100%;
@@ -37,7 +36,7 @@
     margin: 0;
 }
 .search-history-item > button.close{
-    padding-left: .4em;
+    padding: 0 1rem;
     width: 15%;
     position: relative;
     font-size: 25px;
@@ -56,4 +55,8 @@
 .row.search-history-item > a{
     width: 85%;
     border-right: 1px solid #ccc;
+}
+
+.search-history {
+    /* border-left: 1px lightgray solid; */
 }
