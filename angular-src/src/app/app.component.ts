@@ -13,10 +13,10 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                   dashboard => login,
                   dashboard => profile,
                   search => profile,
+                  search => login,
+                  search => register,
                   profile => login,
                   login => register,
-                  login => search,
-                  register => search,
                   register => profile`, [
         // Initial state of new route
         query(':enter',
@@ -54,7 +54,9 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                   profile => home,
                   profile => search,
                   login => home,
-                  register => home`, [
+                  login => search,
+                  register => home,
+                  register => search`, [
         // Initial state of new route
         query(':enter',
           style({
@@ -87,8 +89,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             {optional:true}),
         ])
       ]),
-      transition(`home => search`,
-      [
+      transition(`home => search`, [
       // Initial state of new route
       query(':enter',
         style({
@@ -121,8 +122,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
       {optional:true}),
       ])
       ]),
-      transition(`search => home`,
-      [
+      transition(`search => home`, [
       // Initial state of new route
       query(':enter',
         style({
