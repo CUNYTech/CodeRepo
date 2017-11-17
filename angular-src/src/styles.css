@@ -9,7 +9,9 @@ html, body{
 }
 #flashMessages {
     position: fixed;
-    width: 100%;
+    left: 43%;
+    display: block;
+    margin: 0 auto;
     text-align: center;
     font-size: 1.5em;
 }
