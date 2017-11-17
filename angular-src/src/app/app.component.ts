@@ -7,17 +7,16 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('routerAnimation', [
-      transition(`home => profile,
+      transition(`home => dashboard,
                   home => login,
                   home => register,
                   dashboard => login,
-                  dashboard => profile,
-                  search => profile,
+                  dashboard => register,
                   search => login,
                   search => register,
                   profile => login,
-                  login => register,
-                  register => profile`, [
+                  profile => register,
+                  login => register`, [
         // Initial state of new route
         query(':enter',
           style({
@@ -50,12 +49,11 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             {optional:true}),
         ])
       ]),
-      transition(`register => login,
-                  profile => home,
-                  profile => search,
+      transition(`dashboard => home,
                   login => home,
                   login => search,
                   register => home,
+                  register => login,
                   register => search`, [
         // Initial state of new route
         query(':enter',
@@ -89,7 +87,13 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             {optional:true}),
         ])
       ]),
-      transition(`home => search`, [
+      transition(`home => search,
+                  home => profile,
+                  dashboard => search,
+                  dashboard => profile,
+                  search => profile,
+                  login => profile,
+                  register => profile`, [
       // Initial state of new route
       query(':enter',
         style({
@@ -122,7 +126,11 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
       {optional:true}),
       ])
       ]),
-      transition(`search => home`, [
+      transition(`search => home,
+                  search => dashboard,
+                  profile => home,
+                  profile => dashboard,
+                  profile => search`, [
       // Initial state of new route
       query(':enter',
         style({
