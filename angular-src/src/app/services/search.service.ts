@@ -5,9 +5,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SearchService {
   searchResult:any;
+  historyResults:string[] = [];
 
   constructor(private http: Http) {
-    this.searchResult = 
+    this.searchResult =
       {
         key: "html",
         definition: "HTML tag"

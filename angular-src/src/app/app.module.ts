@@ -19,13 +19,18 @@ import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
-import { SearchHistoryComponent } from './components/search-history/search-history.component';
+// import { SearchHistoryComponent } from './components/search-history/search-history.component';
+
+import { AvatarModule } from "ng2-avatar";
+import { SearchHistoryListComponent } from './components/search-history-list/search-history-list.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
   {path: 'register', component: RegisterComponent, data: { animation: 'register' }},
   {path: 'login', component: LoginComponent, data: { animation: 'login' }},
-  {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
+  // {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
+  {path: 'search', component: SearchComponent, data: { animation: 'search' }},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }}
 ]
 
@@ -39,7 +44,9 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     SearchComponent,
-    SearchHistoryComponent
+    // SearchHistoryComponent,
+    SearchHistoryListComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AvatarModule.forRoot()
   ],
   providers: [ValidateService, AuthService, AuthGuard, SearchService],
   bootstrap: [AppComponent]

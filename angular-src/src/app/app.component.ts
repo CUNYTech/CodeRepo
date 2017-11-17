@@ -7,16 +7,16 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('routerAnimation', [
-      transition(`home => dashboard,
-                  home => profile,
+      transition(`home => profile,
                   home => login,
                   home => register,
                   dashboard => login,
                   dashboard => profile,
+                  search => profile,
+                  search => login,
+                  search => register,
                   profile => login,
                   login => register,
-                  login => dashboard,
-                  register => dashboard,
                   register => profile`, [
         // Initial state of new route
         query(':enter',
@@ -28,7 +28,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
           }),
           {optional:true}),
         group([
-          // move page off screen right on leave
+          // move page off screen left on leave
           query(':leave',
             animate('500ms ease',
               style({
@@ -50,12 +50,13 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             {optional:true}),
         ])
       ]),
-      transition(`dashboard => home,
-                  register => login,
-                  profile => dashboard,
+      transition(`register => login,
                   profile => home,
+                  profile => search,
                   login => home,
-                  register => home`, [
+                  login => search,
+                  register => home,
+                  register => search`, [
         // Initial state of new route
         query(':enter',
           style({
@@ -77,7 +78,7 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
               })
             ),
             {optional:true}),
-          // move page in screen from left to right
+          // move page in screen from right to left
           query(':enter',
             animate('500ms ease',
               style({
@@ -87,6 +88,72 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
             ),
             {optional:true}),
         ])
+      ]),
+      transition(`home => search`, [
+      // Initial state of new route
+      query(':enter',
+        style({
+          position: 'fixed',
+          width:'100%',
+          height: '100%',
+          transform: 'translateY(100%)'
+        }),
+        {optional:true}),
+      group([
+      // move page off screen left on leave
+      query(':leave',
+      animate('500ms ease',
+        style({
+          position: 'fixed',
+          width:'100%',
+          height: '100%',
+          transform: 'translateX(-100%)'
+        })
+      ),
+      {optional:true}),
+      // move page in screen up from bottom
+      query(':enter',
+      animate('700ms ease',
+        style({
+          opacity: 1,
+          transform: 'translateY(0%)'
+        })
+      ),
+      {optional:true}),
+      ])
+      ]),
+      transition(`search => home`, [
+      // Initial state of new route
+      query(':enter',
+        style({
+          position: 'fixed',
+          width:'100%',
+          height: '100%',
+          transform: 'translateX(-100%)'
+        }),
+        {optional:true}),
+      group([
+      // move page off screen down on leave
+      query(':leave',
+      animate('500ms ease',
+        style({
+          position: 'fixed',
+          width:'100%',
+          height: '100%',
+          opacity:'0'
+        })
+      ),
+      {optional:true}),
+      // move page in screen from left to right
+      query(':enter',
+      animate('700ms ease',
+        style({
+          opacity: 1,
+          transform: 'translateX(0%)'
+        })
+      ),
+      {optional:true}),
+      ])
       ]),
       // More transitions here
     ])
