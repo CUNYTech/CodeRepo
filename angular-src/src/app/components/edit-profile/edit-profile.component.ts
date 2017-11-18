@@ -17,13 +17,11 @@ export class EditProfileComponent implements OnInit {
     instagram: ''
   }
 
-
-
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
-      console.log(profile);
+      this.user = profile;
     },
     err => {
       console.log(err);

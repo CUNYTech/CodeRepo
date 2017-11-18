@@ -135,7 +135,7 @@ router.get('/forgot',(req,res,next) => {
 });
 
 //test route to check if code works
-router.post('/test',(req, res, next) => {
+router.post('/update',(req, res, next) => {
  
   
   User.getUserByUsername(req.body.user, (err, User) => {  
@@ -143,7 +143,6 @@ router.post('/test',(req, res, next) => {
 	    if (err) {
 	        //res.status(500).send(err);
 	    	res.json("error finding user");
-	    	re
 	    } else {
 	    	
 	    	User.faceBook =  req.body.faceBook
