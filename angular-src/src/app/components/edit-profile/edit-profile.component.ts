@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { UpdateUserService } from '../../services/update-user.service';
 import { log } from 'util';
+import { provideForRootGuard } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-edit-profile',
@@ -31,12 +32,13 @@ export class EditProfileComponent implements OnInit {
       console.log(err);
       return false;
     });
-    console.log(this.updateProfile);
   }
 
   onSubmit(e){
     e.preventDefault();
-    this.updateUserService.updateUserProfile(this.updateProfile);
+    this.updateUserService.updateUserProfile(this.updateProfile).subscribe(profile => {
+      console.log(profile);
+    });
   }
 
 }

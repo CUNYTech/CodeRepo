@@ -10,10 +10,10 @@ export class UpdateUserService {
   ) { }
 
   updateUserProfile(updateProfile){
-    console.log(updateProfile);
+    // console.log(updateProfile);
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/user/update', updateProfile, {headers: headers})
+    return this.http.post('http://localhost:3000/users/profile', updateProfile, {headers: headers})
       .map(res => res.json());
   }
 }
