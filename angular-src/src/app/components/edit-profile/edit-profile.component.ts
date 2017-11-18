@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { UpdateUserService } from '../../services/update-user.service';
 import { log } from 'util';
 
 @Component({
@@ -9,30 +10,33 @@ import { log } from 'util';
 })
 export class EditProfileComponent implements OnInit {
   isEdit:boolean = true;
-  user: object;
-  updateProfile: Object = {
-    img: '',
+  updateProfile = {
+    user: '',
+    profileImg: '',
     facebook: '',
     twitter: '',
     instagram: ''
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private updateUserService: UpdateUserService
+  ) { }
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
-      this.user = profile;
+      this.updateProfile.user = profile.user.name;
     },
     err => {
       console.log(err);
       return false;
     });
+    console.log(this.updateProfile);
   }
 
   onSubmit(e){
     e.preventDefault();
-    console.log(this.updateProfile);
-    
+    this.updateUserService.updateUserProfile(this.updateProfile);
   }
 
 }

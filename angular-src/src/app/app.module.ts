@@ -19,6 +19,7 @@ import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
+import { UpdateUserService } from './services/update-user.service';
 // import { SearchHistoryComponent } from './components/search-history/search-history.component';
 
 import { AvatarModule } from "ng2-avatar";
@@ -57,7 +58,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AvatarModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard, SearchService],
+  providers: [ValidateService, AuthService, AuthGuard, SearchService, UpdateUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
