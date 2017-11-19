@@ -19,7 +19,8 @@ import { AuthService } from './services/auth.service';
 import { SearchService } from './services/search.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
-import { SearchHistoryComponent } from './components/search-history/search-history.component';
+import { UpdateUserService } from './services/update-user.service';
+// import { SearchHistoryComponent } from './components/search-history/search-history.component';
 
 import { AvatarModule } from "ng2-avatar";
 import { SearchHistoryListComponent } from './components/search-history-list/search-history-list.component';
@@ -44,7 +45,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     SearchComponent,
-    SearchHistoryComponent,
+    // SearchHistoryComponent,
     SearchHistoryListComponent,
     EditProfileComponent
   ],
@@ -57,7 +58,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AvatarModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard, SearchService],
+  providers: [ValidateService, AuthService, AuthGuard, SearchService, UpdateUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
