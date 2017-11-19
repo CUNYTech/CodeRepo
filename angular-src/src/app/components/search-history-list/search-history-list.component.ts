@@ -10,14 +10,16 @@ export class SearchHistoryListComponent implements OnInit {
   historyResults:string[] = [];
 
   constructor(private searchService: SearchService) {
-    this.historyResults = this.searchService.historyResults;
   }
 
   ngOnInit() {
+    this.searchService.getHistoryResults();
+    this.historyResults = this.searchService.historyResults;
   }
 
   removeEntry(search) {
     this.historyResults.splice(search, 1);
+    localStorage.setItem('historyResults', JSON.stringify(this.historyResults));
   }
 
 }
