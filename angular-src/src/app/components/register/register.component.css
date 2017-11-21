@@ -1,3 +1,7 @@
 span {
     margin-left: 1em;
 }
+
+.page-header, label, input{ 
+    color: #fff; 
+}

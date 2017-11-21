@@ -55,6 +55,7 @@ app.use('/users', users);
 
 app.use('/searches',searches);
 
+
 // Index Route
 app.get('/', (req, res) =>{
     res.send('Invalid Endpoint');

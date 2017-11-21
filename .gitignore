@@ -2,5 +2,6 @@ node_modules
 .DS_STORE
 /.settings
 /.project
+.project
 .env
 config/database.js
