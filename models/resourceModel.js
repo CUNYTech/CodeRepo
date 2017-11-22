@@ -5,17 +5,17 @@ const ResourceSchema = mongoose.Schema({
 	title: { type: String, required: true  },
 	  author: { type: String},
 	  tags: { type: String, required: true },
-	  code: { type: String, required: true },
-	  created_at: Date,
-	  updated_at: Date,
-	  meta: {
-		    votes: Number,
-		  }
+	  code: { type: String, required: true }
+//	  created_at: Date,
+//	  updated_at: Date,
+//	  meta: {
+//		    votes: Number,
+//		  }
 	});
 
 
 
-const Resource = module.exports = mongoose.model('User', ResourceSchema);
+const Resource = module.exports = mongoose.model('Resource', ResourceSchema);
 
 
 //Find by Title
@@ -33,17 +33,17 @@ module.exports.getResourceBycode = function(code, callback) {
 
 
 
-ResourceSchema.pre('save', function(next) {
-
-		  var recipe = this;
-		  // get the current date
-		  var currentDate = new Date();
-
-		  // change the updated_at field to current date
-		  Resource.updated_at = currentDate;
-
-		  // if created_at doesn't exist, add to that field
-		  if (!Resource.created_at){
-			  Resource.created_at = currentDate;
-		  }
-	  });
+//ResourceSchema.pre('save', function(next) {
+//
+//		  var Resource = this;
+//		  // get the current date
+//		  var currentDate = new Date();
+//
+//		  // change the updated_at field to current date
+//		  Resource.updated_at = currentDate;
+//
+//		  // if created_at doesn't exist, add to that field
+//		  if (!Resource.created_at){
+//			  Resource.created_at = currentDate;
+//		  }
+//	  });

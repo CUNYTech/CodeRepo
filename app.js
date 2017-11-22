@@ -33,6 +33,10 @@ const users = require('./routes/users');
 
 const searches = require('./routes/searches');
 
+const resources = require('./routes/resourcesSearch');
+
+
+
 // variable for port
 const port = 3000;
 
@@ -54,6 +58,8 @@ require('./config/passport')(passport);
 app.use('/users', users);
 
 app.use('/searches',searches);
+
+app.use('/postresources',resources);
 
 
 // Index Route

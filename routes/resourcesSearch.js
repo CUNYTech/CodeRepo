@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
-const Search = require('../models/search');
+const resource = require('../models/resourceModel');
 
 
 
 //Register
 router.post('/postresource', (req, res, next) => {
-	let newUser = new Resource({
+	let newUser = new Resource ({
 		title: req.body.title,
 		author: req.body.author,
-		code: req.body.code,
-	    password: req.body.password
+		code: req.body.code
+	    
 	    
 	    
 	  });
@@ -19,3 +19,6 @@ router.post('/postresource', (req, res, next) => {
 	
 	
 });
+
+
+module.exports = router;
