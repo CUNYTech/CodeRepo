@@ -59,7 +59,7 @@ app.use('/users', users);
 
 app.use('/searches',searches);
 
-app.use('/postresources',resources);
+app.use('/resources', resources);
 
 
 // Index Route

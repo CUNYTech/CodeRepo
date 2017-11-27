@@ -92,7 +92,7 @@ router.get('/forgot',(req,res,next) => {
 	const password2 = req.body.password2;
 	
 	
-	if (password1 == password2){
+		if (password1 == password2){
 		
 		//res.json("sucess pasword matches");
 		
@@ -100,28 +100,30 @@ router.get('/forgot',(req,res,next) => {
 			
 		User.getEmail(email, (err, User) => {
 		    // console.log(user)
-			if(err) {
-			
-			res.status(500).send(err);	
+				if(err) {
 				
-			} else  {
+				res.status(500).send(err);	
+					
+					} else  {
+				
+						User.password = password1;
+				
+							User.save((err, User) => {
+				            if (err) {
+				            	res.json(`err: ${err}`);
+				            
+				            	}else{
+				            	
+				            		res.json("sucess pasword changed");
 			
-			User.password = password1;
+								}
+							});
 			
-				User.save((err, User) => {
-	            if (err) {
-	            	res.json(`err: ${err}`);
-	            
-	            }else{
-	            	
-	            res.json("sucess pasword changed");
-
 				}
-			});
-		
-		}
 	
-});
+			});			
+		
+		//pasword does not match
 			}  else {
 				
 				res.json("false");
@@ -151,9 +153,10 @@ router.post('/update',(req, res, next) => {
 	            if (err) {
 	                //res.status(500).send(err)
 	            	res.json("cannot update");
-	            }
+	            } else {
 	            //res.status(200).send(User);
 	            res.json("changed");
+	            }
 	        });
       
       
