@@ -25,6 +25,7 @@ import { UpdateUserService } from './services/update-user.service';
 import { AvatarModule } from "ng2-avatar";
 import { SearchHistoryListComponent } from './components/search-history-list/search-history-list.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { PostResourceComponent } from './components/post-resource/post-resource.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, data: { animation: 'login' }},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
   {path: 'search', component: SearchComponent, data: { animation: 'search' }},
+  {path: 'post-resource', component: PostResourceComponent, data: { animation: 'post-resource' }},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }}
 ]
 
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     SearchComponent,
     // SearchHistoryComponent,
     SearchHistoryListComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    PostResourceComponent
   ],
   imports: [
     BrowserModule,

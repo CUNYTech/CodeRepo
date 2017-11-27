@@ -1,0 +1,11 @@
+.post-resource-col{
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    min-height: calc(100vh - 64px);
+}
+#post-resource-title{
+    margin-bottom: 1em;
+}
