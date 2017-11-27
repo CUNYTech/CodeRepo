@@ -51,6 +51,11 @@ const PostSearchSchema = mongoose.Schema({
     content: {
         type: String
     }
+//	  created_at: Date,
+//	  updated_at: Date,
+//	  meta: {
+//		    votes: Number,
+//	
     },{collection:'forum'});
 
 const SearchPost = module.exports = mongoose.model('SearchPost', PostSearchSchema);
@@ -90,5 +95,13 @@ module.exports.getPostByID = function(key, callback) {
 module.exports.getPostByAuthor = function(key, callback) {
     const query = {author: key }
 	SearchPost.find(query, callback);
+}
+
+
+module.exports.addResource = function(newResource, callback,err) {
+	if(err) throw err;
+	newResource.save(callback);
+        
+   
 }
 
