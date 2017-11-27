@@ -12,7 +12,7 @@ router.post('/postresource', (req, res, next) => {
 	let newResource = new Resource ({
 		title: req.body.title,
 		author: req.body.author,
-		code: req.body.code
+		content: req.body.content
 	    
 	  });
 	
@@ -30,7 +30,7 @@ router.post('/postresource', (req, res, next) => {
 	Resource.getResourceBycode(newResource.code, (err, resource) => {
 		    if(err) throw err;
 		    
-		    if(!resource){
+		    if(resource!=""){
 		    
 		    	return res.json({success: false, msg:'resource exist!'});
 		    
@@ -38,9 +38,9 @@ router.post('/postresource', (req, res, next) => {
 		    
 		    	Resource.addResource(newResource, (err, resource) => {
 	    		    if(err){
-	    		    	return res.json({success: false, msg:'User or email exist!'});
+	    		    	return res.json({success: false, msg:'resource exist!'});
 	    		    } else {
-	    		        return res.json({success: true, msg:'User registered'});
+	    		        return res.json({success: true, msg:'success resource'});
 	    		    }
 	    		  });
 		    }
@@ -53,7 +53,7 @@ router.post('/postresource', (req, res, next) => {
 
 router.get('displayresource', (req, res, next) => {
 	
-	console.log(resource);
+	res.json({resource: req.resource});
 	
 });
 

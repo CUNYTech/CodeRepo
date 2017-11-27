@@ -5,7 +5,7 @@ const ResourceSchema = mongoose.Schema({
 	title: { type: String, required: true  },
 	  author: { type: String},
 	  tags: { type: String},
-	  code: { type: String, required: true }
+	  content: { type: String, required: true }
 //	  created_at: Date,
 //	  updated_at: Date,
 //	  meta: {
