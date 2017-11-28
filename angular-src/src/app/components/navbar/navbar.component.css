@@ -1,6 +1,4 @@
-.navbar {
-    margin-bottom: 0 !important;
-}
+/*
 
 .logout {
     background: #d9534f;
@@ -14,6 +12,12 @@
 
 .logout:hover {
     background: #d9534f !important;
+}
+
+*/
+
+.navbar {
+    margin-bottom: 0 !important;
 }
 
 .navbar-brand {
