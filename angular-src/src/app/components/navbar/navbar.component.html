@@ -1,25 +1,25 @@
 <nav class="navbar navbar-expand-md navbar-light blue-grey lighten-5">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button " class="navbar-toggler" id="navbarNav" data-toggle="collapse " data-target="#navbarText" aria-expanded="false " aria-controls="navbarText">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="navbar-header">
+                    <button type="button " class="navbar-toggler" id="navbarBurger" data-toggle="collapse " data-target="#navbarNav" aria-expanded="false " aria-controls="navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <a class="navbar-brand" [routerLink]="[ '/'] ">CodeRef</a>
+                <div id="navbarNav" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" *ngIf="authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/dashboard'] ">Dashboard</a></li>
+                        <li class="nav-item" *ngIf="authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/search'] ">Search</a></li>
+                        <li class="nav-item" *ngIf="authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/profile'] ">Profile</a></li>
+                        <li class="nav-item" *ngIf="!authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/login'] ">Login</a></li>
+                        <li class="nav-item" *ngIf="!authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/register'] ">Register</a></li>
+                        <li class="nav-item" *ngIf="authService.loggedIn() "><a (click)="onLogoutClick() " href="# " class="btn btn-danger">Logout</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
         </div>
-        <a class="navbar-brand" [routerLink]="[ '/'] ">CodeRef</a>
-        <div id="navbarNav" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item" [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a [routerLink]="[ '/'] ">Home</a></li>
-            </ul>
-
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item" *ngIf="authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/dashboard'] ">Dashboard</a></li>
-                <li class="nav-item" *ngIf="authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/search'] ">Search</a></li>
-                <li class="nav-item" *ngIf="authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/profile'] ">Profile</a></li>
-                <li class="nav-item" *ngIf="!authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/login'] ">Login</a></li>
-                <li class="nav-item" *ngIf="!authService.loggedIn() " [routerLinkActive]="[ 'active'] " [routerLinkActiveOptions]="{exact: true} "><a class="nav-link" [routerLink]="[ '/register'] ">Register</a></li>
-                <li class="nav-item" *ngIf="authService.loggedIn() "><a (click)="onLogoutClick() " href="# " class="btn btn-danger">Logout</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
     </div>
 </nav>
