@@ -50,7 +50,14 @@ const PostSearchSchema = mongoose.Schema({
     },
     content: {
         type: String
-    }
+    },
+    
+    created_at: Date,
+	updated_at: Date,
+	  meta: {
+		    votes: Number,
+		  }
+    
     },{collection:'forum'});
 
 const SearchPost = module.exports = mongoose.model('SearchPost', PostSearchSchema);
@@ -90,6 +97,41 @@ module.exports.getPostByID = function(key, callback) {
 module.exports.getPostByAuthor = function(key, callback) {
     const query = {author: key }
 	SearchPost.find(query, callback);
+}
+
+
+
+//Find by Title
+module.exports.getResourceByTitle = function(title, callback) {
+ const query = {title:title}
+ SearchPost.find(query, callback);
+
+}
+
+//Find content
+module.exports.getResourceBycode = function(content, callback) {
+ const query = {content:content}
+ SearchPost.find(query, callback);
+}
+
+
+module.exports.addResource = function(newResource, callback,err) {
+	if(err) throw err;
+	var Resource = this;		  
+	
+	// get the current date
+	 var currentDate = new Date();
+
+	  // change the updated_at field to current date
+	  Resource.updated_at = currentDate;
+
+	  // if created_at doesn't exist, add to that field
+	  if (!Resource.created_at){
+		  Resource.created_at = currentDate;
+	  
+	newResource.save(callback);
+	  }     
+   
 }
 
 
