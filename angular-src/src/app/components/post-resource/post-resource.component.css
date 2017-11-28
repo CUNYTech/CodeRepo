@@ -1,4 +1,4 @@
-.post-resource-col{
+/* .post-resource-col{
     padding-top: 2em;
     display: flex;
     flex-direction: column;
@@ -6,6 +6,18 @@
     background-color: #fff;
     min-height: calc(100vh - 64px);
 }
+
+ */
 #post-resource-title{
     margin-bottom: 1em;
 }
+
+form.col-md-6 {
+    display: block;
+    margin: 0 auto;
+}
+
+ .bg-light {
+     background: #fff;
+     min-height: 100vh;
+ }
