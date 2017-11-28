@@ -33,9 +33,8 @@ const users = require('./routes/users');
 
 const searches = require('./routes/searches');
 
-const resources = require('./routes/resourcesSearch');
 
-
+const resources = require('./routes/resources');
 
 // variable for port
 const port = 3000;
