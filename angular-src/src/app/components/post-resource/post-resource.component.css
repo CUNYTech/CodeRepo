@@ -12,12 +12,16 @@
     margin-bottom: 1em;
 }
 
-form.col-md-6 {
-    display: block;
-    margin: 0 auto;
+.bg-light {
+    background: #fff;
+    min-height: 100vh;
 }
 
- .bg-light {
-     background: #fff;
-     min-height: 100vh;
- }
+small {
+    display: block;
+}
+
+label {
+    font-size: 1.3em;
+}
+
