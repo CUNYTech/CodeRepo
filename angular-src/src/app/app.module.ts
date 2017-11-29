@@ -26,6 +26,7 @@ import { AvatarModule } from "ng2-avatar";
 import { SearchHistoryListComponent } from './components/search-history-list/search-history-list.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { PostResourceComponent } from './components/post-resource/post-resource.component';
+import { ResourcesService } from './services/resources.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
@@ -47,7 +48,6 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     SearchComponent,
-    // SearchHistoryComponent,
     SearchHistoryListComponent,
     EditProfileComponent,
     PostResourceComponent
@@ -61,7 +61,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AvatarModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard, SearchService, UpdateUserService],
+  providers: [ValidateService, AuthService, AuthGuard, SearchService, UpdateUserService, ResourcesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
