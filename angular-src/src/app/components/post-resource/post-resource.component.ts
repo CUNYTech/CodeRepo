@@ -45,7 +45,7 @@ export class PostResourceComponent implements OnInit {
       link: this.link,
       description: this.description,
       username: this.user,
-      seconds: Date.now(),
+      date: Date.now(),
     }
 
     if ( this.title === '' || this.category === '' || this.link === '' || this.title === undefined || this.category === undefined || this.link === undefined)
@@ -54,10 +54,10 @@ export class PostResourceComponent implements OnInit {
         cssClass: 'alert-danger', 
         timeout: 5000});
     } else {
-      console.log(postResource);
-      // this.resourcesService.postResource(postResource).subscribe(data => {
-      //   console.log('Sending post...');
-      // });
+      // console.log(postResource);
+      this.resourcesService.postResource(postResource).subscribe(data => {
+        console.log(data);
+      });
       // this.router.navigate(['/dashboard']);
     }
   }

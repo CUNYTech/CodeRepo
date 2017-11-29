@@ -8,10 +8,10 @@ export class ResourcesService {
   constructor(private http: Http) { }
 
   postResource(postResource){
-    console.log('Successfully send to service');
-    // let headers = new Headers();
-    // headers.append('Content-Type', 'application/json');
-    // return this.http.post('http://localhost:3000/resources/post', postResource, {headers: headers})
-    //   .map(res => res.json());
+    // console.log('Successfully send to service');
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/resources/post', postResource, {headers: headers})
+      .map(res => res.json());
   }
 }
