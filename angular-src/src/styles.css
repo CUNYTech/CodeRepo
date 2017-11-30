@@ -10,9 +10,14 @@ html, body{
     /* font-family: 'Inconsolata', monospace; */
 }
 #flashMessages {
-    position: fixed;
+    /* position: fixed;
     left: 50%;
     text-align: center;
     font-size: 1.5em;
-    margin-left: -100px;
+    margin-left: -100px; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
 }
