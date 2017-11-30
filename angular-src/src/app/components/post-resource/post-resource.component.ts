@@ -57,8 +57,11 @@ export class PostResourceComponent implements OnInit {
       console.log(postResource);
       this.resourcesService.postResource(postResource).subscribe(data => {
         console.log(data);
+        this.flashMessage.show('Your resource was submitted! Thank you.' , {
+          cssClass: 'alert-success', 
+          timeout: 5000});
       });
-      this.router.navigate(['/find-resource']);
+      this.router.navigate(['/dashboard']);
     }
   }
   

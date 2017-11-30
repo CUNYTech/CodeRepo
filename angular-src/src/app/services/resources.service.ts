@@ -11,7 +11,7 @@ export class ResourcesService {
     console.log('Successfully send to service');
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/postresource', postResource, {headers: headers})
+    return this.http.post('http://localhost:3000/resources/postresource', postResource, {headers: headers})
       .map(res => res.json());
   }
 }
