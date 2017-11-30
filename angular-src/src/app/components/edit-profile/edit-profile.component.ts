@@ -3,7 +3,6 @@ import { AuthService } from '../../services/auth.service';
 import { UpdateUserService } from '../../services/update-user.service';
 import { log } from 'util';
 import { provideForRootGuard } from '@angular/router/src/router_module';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile',
@@ -19,21 +18,15 @@ export class EditProfileComponent implements OnInit {
     twitter: '',
     instagram: ''
   }
-  user: object;
 
   constructor(
     private authService: AuthService,
-    private updateUserService: UpdateUserService,
-    private router: Router
+    private updateUserService: UpdateUserService
   ) { }
 
   ngOnInit() {
-    
     this.authService.getProfile().subscribe(profile => {
       this.updateProfile.user = profile.user.name;
-      this.user = profile;
-      console.log(this.user);
-      this.user.
     },
     err => {
       console.log(err);
@@ -44,9 +37,8 @@ export class EditProfileComponent implements OnInit {
   onSubmit(e){
     e.preventDefault();
     this.updateUserService.updateUserProfile(this.updateProfile).subscribe(profile => {
-      
+      console.log(profile);
     });
-    console.log(this.user);
   }
 
 }
