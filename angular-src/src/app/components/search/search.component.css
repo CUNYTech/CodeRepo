@@ -1,79 +1,107 @@
-#search-container{
+#search-container {
     min-height: calc(100vh - 64px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#03a9f4+0,0288d1+100 */
-    /* background: #03a9f4; */ /* Old browsers */
-    /* background: -moz-linear-gradient(top,  #03a9f4 0%, #0288d1 100%); */ /* FF3.6-15 */
-    /* background: -webkit-linear-gradient(top,  #03a9f4 0%,#0288d1 100%); */ /* Chrome10-25,Safari5.1-6 */
-    /* background: linear-gradient(to bottom,  #03a9f4 0%,#0288d1 100%); */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#0288d1',GradientType=0 ); */ /* IE6-9 */
+    /* background: #03a9f4; */
+    /* Old browsers */
+    /* background: -moz-linear-gradient(top,  #03a9f4 0%, #0288d1 100%); */
+    /* FF3.6-15 */
+    /* background: -webkit-linear-gradient(top,  #03a9f4 0%,#0288d1 100%); */
+    /* Chrome10-25,Safari5.1-6 */
+    /* background: linear-gradient(to bottom,  #03a9f4 0%,#0288d1 100%); */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#0288d1',GradientType=0 ); */
+    /* IE6-9 */
 }
 
+
 /* Heading Styles */
-#dashboard-search-title{
+
+#dashboard-search-title {
     color: #fff;
     margin: 0;
     padding-top: 1em;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
+
 /* Form Styles */
-.form-control:focus{
+
+.form-control:focus {
     box-shadow: none !important;
 }
-.form-control.search-input[type=text], .form-control.search-input::placeholder{
+
+.form-control.search-input[type=text],
+.form-control.search-input::placeholder {
     color: #fff;
 }
 
+
 /* Button Styles */
-.btn.btn-secondary{
-    background-color: #fff;
-    color: #666;
+
+.btn.blue-gradient {
+    background: -webkit-linear-gradient(50deg, #45cafc, #303f9f)!important;
+    background: linear-gradient(40deg, #45cafc, #303f9f)!important;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
 }
 
+
 /* List-Group Row Styles */
-#search-list-group .row.search-item-top{
+
+#search-list-group .row.search-item-top {
     padding: 0 15px;
     display: flex;
 }
 
+
 /* List-Item Styles */
+
 .card-title {
     text-transform: lowercase;
 }
-.card-text{
+
+.card-text {
     font-size: 1.25em;
     margin: 0 0 .5em 0;
 }
-#search-list-group .list-group-item{
+
+#search-list-group .list-group-item {
     margin-bottom: 1em;
     border-radius: .3rem !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
+
 #search-list-group .list-group-item:first-child {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
+
 #search-list-group .list-group-item:last-child {
     margin-bottom: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
-#search-list-group .list-group-item h3{
+
+#search-list-group .list-group-item h3 {
     margin-top: 7.5px;
     margin-bottom: 0;
     margin-right: auto;
 }
-#search-list-group .list-group-item h5{
+
+#search-list-group .list-group-item h5 {
     color: #757575;
 }
-#search-list-group .list-group-item hr{
+
+#search-list-group .list-group-item hr {
     border-top: 1px solid #BDBDBD !important;
 }
 
+
 /* Search-Box Styles */
+
 .search-box,
 .search-list {
     float: none;
@@ -82,9 +110,11 @@
     margin-top: 3em;
 }
 
+
 /* Media Queries */
-@media (max-width: 768px){
-    h1.search-title{
+
+@media (max-width: 768px) {
+    h1.search-title {
         font-size: 7vw;
     }
 }
