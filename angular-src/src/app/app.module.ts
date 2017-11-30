@@ -27,6 +27,7 @@ import { SearchHistoryListComponent } from './components/search-history-list/sea
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { PostResourceComponent } from './components/post-resource/post-resource.component';
 import { ResourcesService } from './services/resources.service';
+import { FindResourceComponent } from './components/find-resource/find-resource.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
   {path: 'search', component: SearchComponent, data: { animation: 'search' }},
   {path: 'post-resource', component: PostResourceComponent, data: { animation: 'post-resource' }},
-  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }}
+  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }},
+  {path: 'find-resource', component: FindResourceComponent}
 ]
 
 @NgModule({
@@ -50,7 +52,8 @@ const appRoutes: Routes = [
     SearchComponent,
     SearchHistoryListComponent,
     EditProfileComponent,
-    PostResourceComponent
+    PostResourceComponent,
+    FindResourceComponent
   ],
   imports: [
     BrowserModule,

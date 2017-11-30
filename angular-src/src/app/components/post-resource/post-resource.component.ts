@@ -54,11 +54,11 @@ export class PostResourceComponent implements OnInit {
         cssClass: 'alert-danger', 
         timeout: 5000});
     } else {
-      // console.log(postResource);
+      console.log(postResource);
       this.resourcesService.postResource(postResource).subscribe(data => {
         console.log(data);
       });
-      // this.router.navigate(['/dashboard']);
+      this.router.navigate(['/find-resource']);
     }
   }
   
