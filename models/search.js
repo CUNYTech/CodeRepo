@@ -43,24 +43,27 @@ const PostSearchSchema = mongoose.Schema({
         type: String
     },
     title: {
-        type: String
+        type: String,
+        required: true
     },
     
     link:{
         type: String
     },
     author:{
-        type: String
+        type: String,
+        required: true
     },
     content: {
-        type: String
+        type: String,
+        required: true
     },
     category: {
         type: String
     },
     
     date:{
-    	type: number
+    	type: Number
     }
     
     
