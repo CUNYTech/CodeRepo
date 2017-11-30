@@ -45,18 +45,24 @@ const PostSearchSchema = mongoose.Schema({
     title: {
         type: String
     },
+    
+    link:{
+        type: String
+    },
     author:{
         type: String
     },
     content: {
         type: String
     },
+    category: {
+        type: String
+    },
     
-    created_at: Date,
-	updated_at: Date,
-	  meta: {
-		    votes: Number,
-		  }
+    date:{
+    	type: number
+    }
+    
     
     },{collection:'forum'});
 
@@ -119,19 +125,19 @@ module.exports.addResource = function(newResource, callback,err) {
 	if(err) throw err;
 	var Resource = this;		  
 	
-	// get the current date
-	 var currentDate = new Date();
-
-	  // change the updated_at field to current date
-	  Resource.updated_at = currentDate;
-
-	  // if created_at doesn't exist, add to that field
-	  if (!Resource.created_at){
-		  Resource.created_at = currentDate;
-	  
-	newResource.save(callback);
-	  }     
-   
+//	// get the current date
+//	 var currentDate = new Date();
+//
+//	  // change the updated_at field to current date
+//	  Resource.updated_at = currentDate;
+//
+//	  // if created_at doesn't exist, add to that field
+//	  if (!Resource.created_at){
+//		  Resource.created_at = currentDate;
+//	  
+//	
+//	  }     
+	  newResource.save(callback);
 }
 
 

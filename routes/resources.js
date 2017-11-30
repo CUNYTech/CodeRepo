@@ -12,7 +12,10 @@ router.post('/postresource', (req, res, next) => {
 	let newResource = new Resource ({
 		title: req.body.title,
 		author: req.body.author,
-		content: req.body.content
+		content: req.body.content,
+		category: req.body.category,
+		link: req.body.link,
+		date: req.body.date
 	    
 	  });
 	
