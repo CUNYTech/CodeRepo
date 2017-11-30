@@ -58,6 +58,9 @@
 
 
 /* List-Item Styles */
+.card{
+   background-color: transparent; 
+}
 
 .card-title {
     text-transform: lowercase;
