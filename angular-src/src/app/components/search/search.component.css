@@ -59,7 +59,8 @@
 
 /* List-Item Styles */
 .card{
-   background-color: transparent; 
+   background-color: transparent;
+   box-shadow: none;
 }
 
 .card-title {
