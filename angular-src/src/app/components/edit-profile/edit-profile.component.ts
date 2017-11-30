@@ -18,6 +18,7 @@ export class EditProfileComponent implements OnInit {
     twitter: '',
     instagram: ''
   }
+  user: object;
 
   constructor(
     private authService: AuthService,
@@ -25,8 +26,10 @@ export class EditProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     this.authService.getProfile().subscribe(profile => {
       this.updateProfile.user = profile.user.name;
+      this.user = profile;
     },
     err => {
       console.log(err);
@@ -39,6 +42,7 @@ export class EditProfileComponent implements OnInit {
     this.updateUserService.updateUserProfile(this.updateProfile).subscribe(profile => {
       console.log(profile);
     });
+    // console.log(this.user);
   }
 
 }
