@@ -43,9 +43,9 @@ export class PostResourceComponent implements OnInit {
       title: this.title,
       category: this.category,
       link: this.link,
-      description: this.description,
-      username: this.user,
-      date: Date.now(),
+      content: this.description,
+      author: this.user,
+      date: Date.now()
     }
 
     if ( this.title === '' || this.category === '' || this.link === '' || this.title === undefined || this.category === undefined || this.link === undefined)
