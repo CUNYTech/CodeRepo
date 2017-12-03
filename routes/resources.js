@@ -64,28 +64,14 @@ router.post('/search', (req, res, next) => {
     let date = req.body.date;
 
 	let query;
-		var datetime = Date.now();
-	if(date == 0)
-	{
-		query = {postID: { $regex: '.*' + postID + '.*' },
-					title:{ $regex: '.*' + title + '.*' },
-					link:{ $regex: '.*' + link + '.*' },
-					author:{ $regex: '.*' + author + '.*' },
-					content:{ $regex: '.*' + content + '.*' },
-					category:{ $regex: '.*' + category + '.*' },
-					date:{ $exists: true }};
-	}
-	else
-	{
-		var datetime = Date.now();
-		query = {postID: { $regex: '.*' + postID + '.*' },
-					title:{ $regex: '.*' + title + '.*' },
-					link:{ $regex: '.*' + link + '.*' },
-					author:{ $regex: '.*' + author + '.*' },
-					content:{ $regex: '.*' + content + '.*' },
-					category:{ $regex: '.*' + category + '.*' },
-					date:{ $gt:date, $lt:datetime } }
-	}
+	var datetime = Date.now();
+	query = {postID: { $regex: '.*' + postID + '.*' },
+				title:{ $regex: '.*' + title + '.*' },
+				link:{ $regex: '.*' + link + '.*' },
+				author:{ $regex: '.*' + author + '.*' },
+				content:{ $regex: '.*' + content + '.*' },
+				category:{ $regex: '.*' + category + '.*' },
+				date:{ $gt:date, $lt:datetime } };
     
 
 	Resource2.getResourceByFilter(query, (err, search) => {
