@@ -37,7 +37,7 @@ const JSSearchSchema = mongoose.Schema({
 
 const SearchJS = module.exports = mongoose.model('SearchJS', JSSearchSchema);
 
-// JSSearch Schema
+// Post Search Schema
 const PostSearchSchema = mongoose.Schema({
     postID: {
         type: String

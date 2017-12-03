@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
 const Resource = require('../models/search');
-
+const Resource2 = require('../models/resource');
 
 
 //post resource
@@ -50,6 +50,56 @@ router.post('/postresource', (req, res, next) => {
 		});
 	
 });
+
+// Search post
+router.post('/search', (req, res, next) => {
+
+	
+	let postID = req.body.postID;
+    let title = req.body.title;
+    let link = req.body.link;
+	let author = req.body.author;
+	let content = req.body.content;
+	let category = req.body.category;
+    let date = req.body.date;
+
+	let query;
+		var datetime = Date.now();
+	if(date == 0)
+	{
+		query = {postID: { $regex: '.*' + postID + '.*' },
+					title:{ $regex: '.*' + title + '.*' },
+					link:{ $regex: '.*' + link + '.*' },
+					author:{ $regex: '.*' + author + '.*' },
+					content:{ $regex: '.*' + content + '.*' },
+					category:{ $regex: '.*' + category + '.*' },
+					date:{ $exists: true }};
+	}
+	else
+	{
+		var datetime = Date.now();
+		query = {postID: { $regex: '.*' + postID + '.*' },
+					title:{ $regex: '.*' + title + '.*' },
+					link:{ $regex: '.*' + link + '.*' },
+					author:{ $regex: '.*' + author + '.*' },
+					content:{ $regex: '.*' + content + '.*' },
+					category:{ $regex: '.*' + category + '.*' },
+					date:{ $gt:date, $lt:datetime } }
+	}
+    
+
+	Resource2.getResourceByFilter(query, (err, search) => {
+		if(err) throw err;
+		if(search == ""){				
+				res.json({success: false, msg:'no result found!'});
+		}
+		else
+		{
+			res.json(search);
+		}
+	});
+});
+
 
 
 

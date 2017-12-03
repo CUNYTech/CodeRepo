@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('../config/database');
 
+
 const ResourceSchema = mongoose.Schema({
 	title: { type: String, required: true  },
 	  author: { type: String},
@@ -13,6 +14,34 @@ const ResourceSchema = mongoose.Schema({
 //		  }
 	},{collection:'resources'});
 
+// Post Search Schema
+const PostSearchSchema = mongoose.Schema({
+    postID: {
+        type: String
+    },
+    title: {
+        type: String,
+        required: true
+    },
+    link:{
+        type: String
+    },
+    author:{
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    category: {
+        type: String
+    },
+    
+    date:{
+    	type: Number
+    }
+    },{collection:'forum'});
 
 
 const Resource = module.exports = mongoose.model('Resource', ResourceSchema);
@@ -40,6 +69,19 @@ const Resource = module.exports = mongoose.model('Resource', ResourceSchema);
 	        
 	   
 	}
+
+
+
+
+
+const ResourceSearch = module.exports = mongoose.model('ResourceSearch', PostSearchSchema);
+
+module.exports.getResourceByFilter = function(query, callback) {
+	ResourceSearch.find(query, callback);
+   }
+
+
+
 
 
 
