@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   box-shadow: none !important;
+  margin-bottom: 4em !important;
 }
 .view.overlay.hm-white-slight.waves-light{
   border-radius: .3rem;
@@ -27,4 +28,16 @@
 .card-text{
   font-size: 1.5em;
   line-height: 1.7;
+  color: #666;
+}
+.col-md-4.home-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa{
+  font-size: 4.5em;
+  color: #666;
 }
