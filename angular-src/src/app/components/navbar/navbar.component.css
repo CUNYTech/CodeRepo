@@ -40,9 +40,12 @@
 }
 
 .navbar-brand {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    padding-top: .8rem;
+
+}
+
+.logo-inverse {
+    font-weight: 300;
+    
 }
 
 .nav-link{
