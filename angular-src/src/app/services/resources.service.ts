@@ -14,4 +14,11 @@ export class ResourcesService {
     return this.http.post('http://localhost:3000/resources/postresource', postResource, {headers: headers})
       .map(res => res.json());
   }
+
+  getAll(filter){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/resources/postresource', filter ,{headers: headers})
+      .map(res => res.json());
+  }
 }

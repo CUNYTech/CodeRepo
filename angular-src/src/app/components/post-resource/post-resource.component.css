@@ -10,6 +10,8 @@
  */
 #post-resource-title{
     margin-bottom: 1em;
+    padding-top: 1em;
+    font-weight: bold;
 }
 
 .bg-light {
