@@ -64,5 +64,4 @@ export class PostResourceComponent implements OnInit {
       this.router.navigate(['/dashboard']);
     }
   }
-  
 }
