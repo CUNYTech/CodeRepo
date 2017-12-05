@@ -65,8 +65,7 @@ router.post('/search', (req, res, next) => {
 
 	let query;
 	var datetime = Date.now();
-	query = {postID: { $regex: '.*' + postID + '.*' },
-				title:{ $regex: '.*' + title + '.*' },
+	query = {title:{ $regex: '.*' + title + '.*' },
 				link:{ $regex: '.*' + link + '.*' },
 				author:{ $regex: '.*' + author + '.*' },
 				content:{ $regex: '.*' + content + '.*' },
