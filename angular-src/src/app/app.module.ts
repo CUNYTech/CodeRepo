@@ -25,6 +25,9 @@ import { UpdateUserService } from './services/update-user.service';
 import { AvatarModule } from "ng2-avatar";
 import { SearchHistoryListComponent } from './components/search-history-list/search-history-list.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { PostResourceComponent } from './components/post-resource/post-resource.component';
+import { ResourcesService } from './services/resources.service';
+import { FindResourceComponent } from './components/find-resource/find-resource.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
@@ -32,7 +35,9 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, data: { animation: 'login' }},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
   {path: 'search', component: SearchComponent, data: { animation: 'search' }},
-  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }}
+  {path: 'post-resource', component: PostResourceComponent, data: { animation: 'post-resource' }, canActivate:[AuthGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }},
+  {path: 'find-resource', component: FindResourceComponent, canActivate:[AuthGuard]},
 ]
 
 @NgModule({
@@ -45,9 +50,10 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     SearchComponent,
-    // SearchHistoryComponent,
     SearchHistoryListComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    PostResourceComponent,
+    FindResourceComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AvatarModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard, SearchService, UpdateUserService],
+  providers: [ValidateService, AuthService, AuthGuard, SearchService, UpdateUserService, ResourcesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

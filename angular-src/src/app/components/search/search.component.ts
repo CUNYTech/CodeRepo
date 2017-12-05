@@ -48,7 +48,24 @@ export class SearchComponent implements OnInit {
         }
         for(let i = 0; i < data.length; i++){
           this.searches.unshift(data[i]);
-          this.searchService.historyResults.unshift(this.searches[i].key.toLowerCase());
+          // this.searchService.historyResults.unshift(this.searches[i].key.toLowerCase());
+
+          // Init local variable
+          let historyResults;
+
+          if(localStorage.getItem('historyResults') === null){
+            historyResults = [];
+            // Push new history result
+            this.searchService.historyResults.unshift(this.searches[i].key.toLowerCase());
+            // Set new array to local storage
+            localStorage.setItem('historyResults', JSON.stringify(this.searchService.historyResults));
+          } else {
+            historyResults = JSON.parse(localStorage.getItem('historyResults'));
+            // Add new history result
+            this.searchService.historyResults.unshift(this.searches[i].key.toLowerCase());
+            // Reset local storage
+            localStorage.setItem('historyResults', JSON.stringify(this.searchService.historyResults));
+          }
         }
       });
     }

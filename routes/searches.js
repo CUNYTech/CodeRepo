@@ -3,10 +3,9 @@ const router = express.Router();
 const config = require('../config/database');
 const Search = require('../models/search');
 
-// Search
+// Search keyword
 router.post('/search', (req, res, next) => {
 	const type = req.body.type;
-	console.log(type);
 	if(type == "HTML" || type == undefined)
 	{
 		const key = req.body.search;
@@ -70,6 +69,74 @@ router.post('/search', (req, res, next) => {
 		}
 	}
 	
+});
+
+
+// Search post
+router.post('/searchPost', (req, res, next) => {
+	const target = req.body.target;
+	if(target == "title" || target == undefined)
+	{
+		const key = req.body.search;	
+		Search.getPostByTitle(key, (err, search) => {
+			if(err) throw err;
+			if(search == ""){				
+					res.json({success: false, msg:'no result found!'});
+			}
+			else
+			{
+				res.json(search);
+			}
+		});
+	}
+	else if(target == "ID")
+	{
+		const key = req.body.search;	
+		Search.getPostByID(key, (err, search) => {
+			if(err) throw err;
+			if(search == ""){				
+					res.json({success: false, msg:'no result found!'});
+			}
+			else
+			{
+				res.json(search);
+			}
+		});
+	}
+	else if(target == "author")
+	{
+		const key = req.body.search;	
+		Search.getPostByAuthor(key, (err, search) => {
+			if(err) throw err;
+			if(search == ""){				
+					res.json({success: false, msg:'no result found!'});
+			}
+			else
+			{
+				res.json(search);
+			}
+		});
+	}
+	else if(target == "content")
+	{
+		const key = req.body.search.split(" ");;
+		let keys = '\.*';
+		for(k in key)
+		{
+			console.log(key[k]);
+			keys += (key[k] + '\.*');
+		}
+		Search.getPostByContent(keys, (err, search) => {
+			if(err) throw err;
+			if(search == ""){				
+					res.json({success: false, msg:'no result found!'});
+			}
+			else
+			{
+				res.json(search);
+			}
+		});
+	}
 });
 
 module.exports = router;
