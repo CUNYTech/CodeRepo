@@ -1,3 +1,47 @@
-<p>
-  post-resource works!
-</p>
+<div class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="text-center" id="post-resource-title">Post Resource</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <form (submit)="onSubmit($event)" id="form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="email" class="form-control" id="title" placeholder="Title Of Your Post" name="title" [(ngModel)]="title">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" name="category" [(ngModel)]="category">
+              <option>Choose your category. . .</option>
+              <option>Front end development</option>
+              <option>Back end development</option>
+              <option>App development</option>
+              <option>Game development</option>
+              <option>Databases</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="link">Url for your resource</label>
+            <input class="form-control" type="text" placeholder="Url to your resource..." name="link" [(ngModel)]="link">
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Describe Your Resource</label>
+            <textarea class="form-control" rows="3" name="description" [(ngModel)]="description"></textarea>        
+          </div>
+         
+          <button type="submit" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
+          <small class="text-muted">By submitting you are helping thousands of other developers!</small>
+          {{today | date}}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

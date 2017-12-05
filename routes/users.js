@@ -12,12 +12,8 @@ router.post('/register', (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     username: req.body.username,
-    password: req.body.password,
-    faceBook: req.body.faceBook,
-    twitter: req.body.twitter,
-    linkedin: req.body.linkedin,
-    google: req.body.google,
-    instagram: req.body.instagram
+    password: req.body.password
+    
     
   });
   let errMsg = "";
@@ -96,7 +92,7 @@ router.get('/forgot',(req,res,next) => {
 	const password2 = req.body.password2;
 	
 	
-	if (password1 == password2){
+		if (password1 == password2){
 		
 		//res.json("sucess pasword matches");
 		
@@ -104,28 +100,30 @@ router.get('/forgot',(req,res,next) => {
 			
 		User.getEmail(email, (err, User) => {
 		    // console.log(user)
-			if(err) {
-			
-			res.status(500).send(err);	
+				if(err) {
 				
-			} else  {
+				res.status(500).send(err);	
+					
+					} else  {
+				
+						User.password = password1;
+				
+							User.save((err, User) => {
+				            if (err) {
+				            	res.json(`err: ${err}`);
+				            
+				            	}else{
+				            	
+				            		res.json("sucess pasword changed");
 			
-			User.password = password1;
+								}
+							});
 			
-				User.save((err, User) => {
-	            if (err) {
-	            	res.json(`err: ${err}`);
-	            
-	            }else{
-	            	
-	            res.json("sucess pasword changed");
-
 				}
-			});
-		
-		}
 	
-});
+			});			
+		
+		//pasword does not match
 			}  else {
 				
 				res.json("false");
@@ -145,7 +143,7 @@ router.post('/update',(req, res, next) => {
 	    	res.json("error finding user");
 	    } else {
 	    	
-	    	User.faceBook =  req.body.faceBook
+	    	User.facebook =  req.body.faceBook
 	    	User.twitter = req.body.twitter
 	    	User.linkedin = req.body.linkedin
 	    	User.google = req.body.google
@@ -155,9 +153,10 @@ router.post('/update',(req, res, next) => {
 	            if (err) {
 	                //res.status(500).send(err)
 	            	res.json("cannot update");
-	            }
+	            } else {
 	            //res.status(200).send(User);
 	            res.json("changed");
+	            }
 	        });
       
       
