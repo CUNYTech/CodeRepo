@@ -1,3 +1,52 @@
-<p>
-  find-resource works!
-</p>
+<div class="container-fluid py-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary">
+          
+        </div>
+        <div class="card-body">
+            <h3>Filter resources</h3>
+            <form>        
+                    <div class="md-form">
+                        <i class="fa fa-font prefix"></i>
+                        <input type="text" class="form-control" placeholder="Title">
+                        <label for="form3"></label>
+                    </div>
+                
+                    <div class="md-form">
+                        <i class="fa fa-pencil prefix"></i>
+                        <input type="text"class="form-control" placeholder="Author">
+                        <label for="form2"></label>
+                    </div>
+                
+                    <div class="md-form">
+                        <select class="form-control" id="category" name="category" [(ngModel)]="category">
+                            <option>Front end development</option>
+                            <option>Back end development</option>
+                            <option>App development</option>
+                            <option>Game development</option>
+                            <option>Databases</option>
+                            <option>Other</option>
+                          </select>
+                    </div>
+                
+                    <div class="md-form">
+                        <i class="fa fa-link prefix"></i>
+                        <input type="text" class="form-control" placeholder="Url">
+                        <label for="form2"></label>
+                    </div>
+                
+                    <div class="text-center">
+                        <button class="btn btn-primary">Go <i class="fa fa-paper-plane-o ml-1"></i></button>
+                    </div>
+                
+                </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      forym here
+    </div>
+  </div>
+</div>

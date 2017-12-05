@@ -28,6 +28,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { PostResourceComponent } from './components/post-resource/post-resource.component';
 import { ResourcesService } from './services/resources.service';
 import { FindResourceComponent } from './components/find-resource/find-resource.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, data: { animation: 'home' }},
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     SearchHistoryListComponent,
     EditProfileComponent,
     PostResourceComponent,
-    FindResourceComponent
+    FindResourceComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
