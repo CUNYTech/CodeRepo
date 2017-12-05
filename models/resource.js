@@ -16,9 +16,6 @@ const ResourceSchema = mongoose.Schema({
 
 // Post Search Schema
 const PostSearchSchema = mongoose.Schema({
-    postID: {
-        type: String
-    },
     title: {
         type: String,
         required: true
