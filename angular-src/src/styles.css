@@ -9,6 +9,9 @@ html, body{
     font-family: 'Poppins', sans-serif;
     /* font-family: 'Inconsolata', monospace; */
 }
+body{
+
+}
 #flashMessages {
     /* position: fixed;
     left: 50%;

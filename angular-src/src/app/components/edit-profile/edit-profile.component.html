@@ -1,33 +1,34 @@
 <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.css" rel="stylesheet"> -->
 <!-- Form subscription -->
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Update your profile
-			<a class="btn btn-link" (click)="isEdit = !isEdit">
-					<span *ngIf="isEdit; else noEdit">Edit</span>
-					<ng-template #noEdit>Hide</ng-template>
-			</a>
-		</h3>
-	</div>
-	<div class="panel-body" [hidden]="isEdit">
-		<form (submit)="onSubmit($event)">
-			<div class="form-group">
-					<label><i class="fa fa-picture-o prefix grey-text"></i> Profile Image:</label>
-					<input type="text" class="form-control" name="profileImg" [(ngModel)]="updateProfile.profileImg" placeholder="http://example.com/img/me.jpg">
-			</div>
-			<div class="form-group">
-					<label><i class="fa fa-facebook prefix grey-text"></i> Facebook:</label>
-					<input type="text" class="form-control" name="facebook" [(ngModel)]="updateProfile.facebook" placeholder="https://www.facebook.com/user.name.14606936">
-			</div>
-			<div class="form-group">
-					<label><i class="fa fa-twitter prefix grey-text"></i> Twitter:</label>
-					<input type="text" class="form-control" name="twitter" [(ngModel)]="updateProfile.twitter" placeholder="https://twitter.com/twitter_hadle">
-			</div>
-			<div class="form-group">
-					<label><i class="fa fa-instagram prefix grey-text"></i> Instragram:</label>
-					<input type="text" class="form-control" name="instagram" [(ngModel)]="updateProfile.instagram" placeholder="https://www.instagram.com/user.name/">
-			</div>
-			<input type="submit" value="Save" class="btn btn-primary">
-		</form>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Update your profile
+            <a class="btn btn-outline-info btn-rounded waves-effect btn-sm" (click)="isEdit = !isEdit">
+                <span *ngIf="isEdit; else noEdit">Edit</span>
+                <ng-template #noEdit>Hide</ng-template>
+            </a>
+        </h3>
+    </div>
+    <div class="card-body" [hidden]="isEdit">
+        <form (submit)="onSubmit($event)">
+            <div class="form-group">
+                <label><i class="fa fa-picture-o prefix grey-text"></i> Profile Image:</label>
+                <input type="text" class="form-control" name="profileImg" [(ngModel)]="updateProfile.profileImg" placeholder="http://example.com/img/me.jpg">
+            </div>
+            <div class="form-group">
+                <label><i class="fa fa-facebook prefix grey-text"></i> Facebook:</label>
+                <input type="text" class="form-control" name="facebook" [(ngModel)]="updateProfile.facebook" placeholder="https://www.facebook.com/user.name.14606936">
+            </div>
+            <div class="form-group">
+                <label><i class="fa fa-twitter prefix grey-text"></i> Twitter:</label>
+                <input type="text" class="form-control" name="twitter" [(ngModel)]="updateProfile.twitter" placeholder="https://twitter.com/twitter_hadle">
+            </div>
+            <div class="form-group">
+                <label><i class="fa fa-instagram prefix grey-text"></i> Instagram:</label>
+                <input type="text" class="form-control" name="instagram" [(ngModel)]="updateProfile.instagram" placeholder="https://www.instagram.com/user.name/">
+            </div>
+            <input type="submit" value="Save" class="btn btn-primary">
+        </form>
 	</div>
 </div>
