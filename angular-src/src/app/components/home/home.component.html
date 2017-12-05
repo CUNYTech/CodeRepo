@@ -1,44 +1,37 @@
-<div id="home-container">
-    <!-- <app-dashboard></app-dashboard> -->
-</div>
-<div class="jumbotron text-center">
-    <h1>Welcome to Coderef!</h1>
-    <p class="lead">Code definitions in seconds!</p>
-    <div>
-        <a class="btn btn-primary waves-light" [routerLink]="['/register']">Register</a>
-        <a class="btn btn-elegant waves-light" [routerLink]="['/login']">Login</a>
+<!--Card-->
+<div class="card card-cascade wider reverse my-4">
+    <!--Card image-->
+    <div class="view overlay hm-white-slight waves-light" mdbRippleRadius>
+        <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" class="img-fluid">
+        <a>
+            <div class="mask"></div>
+        </a>
     </div>
+    <!--/Card image-->
+
+    <!--Card content-->
+    <div class="card-body text-center">
+        <!--Title-->
+        <h1 class="card-title">Welcome to CodeRef</h1>
+        <hr>
+        <h4 class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium.</h4>
+    </div>
+    <!--/.Card content-->
 </div>
-<!-- <div class="banner text-center">
-  <h1>Welcome to CodeRef!</h1>
-  <p class="lead">Code definitions in seconds!</p>
-  <div>
-    <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
-    <a class="btn btn-default" [routerLink]="['/login']">Login</a>
-  </div>
-</div>
+<!--/.Card-->
 <div class="container">
-  <div class="row text-center">
-    <div class="col-md-4">
-      <div class="icons">
-        <i class="fa fa-leanpub" aria-hidden="true"></i>
-      </div>
-      <h3>Learn as you go</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, veniam.</p>
+    <div class="row">
+        <div class="col-md-4 home-col">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            <h3 class="home-col-title">Find Resources</h3>
+        </div>
+        <div class="col-md-4 home-col">
+            <i class="fa fa-code" aria-hidden="true"></i>
+            <h3 class="home-col-title">Search Tags</h3>
+        </div>
+        <div class="col-md-4 home-col">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <h3 class="home-col-title">Learn to Code</h3>
+        </div>
     </div>
-    <div class="col-md-4">
-      <div class="icons">
-          <i class="fa fa-code" aria-hidden="true"></i>          
-      </div>
-      <h3>Pick your language</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, veniam.</p>
-    </div>
-    <div class="col-md-4">
-      <div class="icons">
-          <i class="fa fa-graduation-cap" aria-hidden="true"></i>          
-      </div>
-      <h3>Best tool to aid your learning</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, veniam.</p>
-    </div>
-  </div>
-</div> -->
+</div>
