@@ -40,12 +40,11 @@
 }
 
 .navbar-brand {
-
+    letter-spacing: 2px;
 }
 
 .logo-inverse {
     font-weight: 300;
-    
 }
 
 .nav-link{

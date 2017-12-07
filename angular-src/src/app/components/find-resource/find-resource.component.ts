@@ -26,7 +26,7 @@ export class FindResourceComponent implements OnInit {
   ngOnInit() {
     this.resourceService.getAll(this.filter).subscribe(posts => {
       for (let i = 0; i < posts.length; i++) {
-        this.posts.push(posts[i]);
+        this.posts.unshift(posts[i]);
       }
     });
     console.log(this.posts);
