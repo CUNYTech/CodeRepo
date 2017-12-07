@@ -17,12 +17,19 @@ export class FindResourceComponent implements OnInit {
     date: 0
   }
 
+  posts: object[] = [];
+
   constructor(
     private resourceService: ResourcesService
   ) { }
 
   ngOnInit() {
-    this.resourceService.getAll(this.filter);
+    this.resourceService.getAll(this.filter).subscribe(posts => {
+      for (let i = 0; i < posts.length; i++) {
+        this.posts.push(posts[i]);
+      }
+    });
+    console.log(this.posts);
   }
 
 }

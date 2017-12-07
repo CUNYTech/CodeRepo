@@ -18,7 +18,7 @@ export class ResourcesService {
   getAll(filter){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/resources/postresource', filter ,{headers: headers})
+    return this.http.post('http://localhost:3000/resources/search', filter ,{headers: headers})
       .map(res => res.json());
   }
 }

@@ -1,9 +1,7 @@
 <app-navbar></app-navbar>
-<!-- <div class="container"> -->
-    <flash-messages></flash-messages>
-<!-- </div> -->
+<flash-messages></flash-messages>
 <div id="router-outlet-wrapper" [@routerAnimation]="getRouteAnimation(route)">
     <router-outlet #route="outlet"></router-outlet>
+    <app-footer></app-footer>
 </div>
-<!-- /@routerAnimation -->
-<!-- <div id="app-background"></div> -->
+
