@@ -27,16 +27,16 @@ a, a:hover, a:focus, a:visited, a:active{
     width: 100%;
 }
 .dashboard-options-title{
-    color: #fff;
+    color: #333;
 }
 .container.inner .col-md-12.dashboard-title{
     display: flex;
     justify-content: center;
 }
 .col-md-12.dashboard-title .dashboard-title{
-    color: #fff;
+    color: #333;
     margin: 1em 0 0 0;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    /* text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); */
 }
 .container.inner .col-md-4{
     padding: 3em 0 4em 0;
