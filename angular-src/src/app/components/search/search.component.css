@@ -20,10 +20,9 @@
 /* Heading Styles */
 
 #dashboard-search-title {
-    color: #fff;
+    color: #333;
     margin: 0;
     padding-top: 1em;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -35,7 +34,7 @@
 
 .form-control.search-input[type=text],
 .form-control.search-input::placeholder {
-    color: #fff;
+    color: #333;
 }
 
 

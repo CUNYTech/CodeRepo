@@ -25,6 +25,9 @@
 .card-body hr{
   border-top: 1px solid #ccc;
 }
+.card.card-cascade img{
+  width: 100%;
+}
 .card-text{
   font-size: 1.5em;
   line-height: 1.7;
@@ -60,4 +63,28 @@
 }
 .home-col-title, .home-col-sub{
   text-align: center;
+}
+
+.masthead {
+  background: url(/assets/img/code.gif) no-repeat;
+  background-color: rgba(0,0,0, .5);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center;
+  height: 80vh;
+  text-transform: uppercase;
+}
+
+.masthead h1 {
+  font-size: 5em;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+}
+
+.text-block {
+  padding-top: 150px;
+}
+
+.lead {
+  letter-spacing: .2em;
 }
