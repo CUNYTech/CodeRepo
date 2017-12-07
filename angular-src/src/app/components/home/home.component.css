@@ -25,6 +25,9 @@
 .card-body hr{
   border-top: 1px solid #ccc;
 }
+.card.card-cascade img{
+  width: 100%;
+}
 .card-text{
   font-size: 1.5em;
   line-height: 1.7;
