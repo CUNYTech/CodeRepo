@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
-<flash-messages></flash-messages>
+<div class="container">
+    <flash-messages></flash-messages>
+</div>
 <div id="router-outlet-wrapper" [@routerAnimation]="getRouteAnimation(route)">
     <router-outlet #route="outlet"></router-outlet>
     <app-footer></app-footer>
 </div>
-
