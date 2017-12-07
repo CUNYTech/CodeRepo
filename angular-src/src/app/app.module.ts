@@ -36,9 +36,9 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, data: { animation: 'login' }},
   {path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard], data: { animation: 'dashboard' }},
   {path: 'search', component: SearchComponent, data: { animation: 'search' }},
-  {path: 'post-resource', component: PostResourceComponent, data: { animation: 'post-resource' }, canActivate:[AuthGuard]},
+  {path: 'post-resource', component: PostResourceComponent, canActivate:[AuthGuard], data: { animation: 'post-resource' }},
   {path: 'profile', component: ProfileComponent, canActivate:[AuthGuard], data: { animation: 'profile' }},
-  {path: 'find-resource', component: FindResourceComponent, canActivate:[AuthGuard]},
+  {path: 'find-resource', component: FindResourceComponent, canActivate:[AuthGuard],  data: { animation: 'find-resource' }},
 ]
 
 @NgModule({
