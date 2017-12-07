@@ -10,13 +10,24 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
       transition(`home => dashboard,
                   home => login,
                   home => register,
+                  home => post-resource,
+                  home => find-resource,
                   dashboard => login,
                   dashboard => register,
+                  dashboard => post-resource,
+                  dashboard => find-resource,
                   search => login,
                   search => register,
+                  search => post-resource,
+                  search => find-resource,
                   profile => login,
                   profile => register,
-                  login => register`, [
+                  login => register,
+                  post-resource => find-resource,
+                  post-resource => login,
+                  post-resource => register,
+                  find-resource => login,
+                  find-resource => register`, [
         // Initial state of new route
         query(':enter',
           style({
@@ -51,10 +62,23 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
       ]),
       transition(`dashboard => home,
                   login => home,
+                  login => dashboard,
                   login => search,
+                  login => post-resource,
+                  login => find-resource,
                   register => home,
                   register => login,
-                  register => search`, [
+                  register => dashboard,
+                  register => search,
+                  register => post-resource,
+                  register => find-resource,
+                  post-resource => home,
+                  post-resource => dashboard,
+                  post-resource => search,
+                  find-resource => home,
+                  find-resource => dashboard,
+                  find-resource => search,
+                  find-resource => post-resource`, [
         // Initial state of new route
         query(':enter',
           style({
@@ -93,7 +117,9 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                   dashboard => profile,
                   search => profile,
                   login => profile,
-                  register => profile`, [
+                  register => profile,
+                  post-resource => profile,
+                  find-resource => profile`, [
       // Initial state of new route
       query(':enter',
         style({
@@ -130,7 +156,9 @@ import { trigger, group, state, style, animate, transition, query } from '@angul
                   search => dashboard,
                   profile => home,
                   profile => dashboard,
-                  profile => search`, [
+                  profile => search,
+                  profile => post-resource,
+                  profile => find-resource`, [
       // Initial state of new route
       query(':enter',
         style({

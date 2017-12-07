@@ -35,12 +35,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 44px;
 }
 
 .fa{
   font-size: 4.5em;
-  color: #666;
+  color: #fff;
 }
+.fa-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 145px;
+  width: 145px;
+  border-radius: 50%;
+  background-color: #03a9f4;
+}
+
 .home-col-title{
-  margin: 1em 0;
+  margin: 1em 0 .5em 0;
+}
+.home-col-sub{
+  font-size: 1.25em;
+}
+.home-col-title, .home-col-sub{
+  text-align: center;
 }
