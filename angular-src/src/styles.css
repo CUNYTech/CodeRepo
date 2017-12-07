@@ -8,19 +8,34 @@ body {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
+    color: #333;
     /* font-family: 'Inconsolata', monospace; */
 }
+
 #flashMessages {
     /* position: fixed;
     left: 50%;
     text-align: center;
     font-size: 1.5em;
     margin-left: -100px; */
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10000;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    margin-left: 2.5px;
+}
+
+.alert-success {
+    border-left: 5px solid #00C851;
+    background-color: #ffffff;
+}
+
+.alert-danger {
+    border-left: 5px solid #ff3547;
+    background-color: #ffffff;
 }
 
 .btn.blue-gradient {

@@ -1,6 +1,6 @@
 <div class="container-fluid py-5">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 ">
       <div class="card">
         <div class="card-header bg-primary">
           
@@ -46,7 +46,34 @@
       </div>
     </div>
     <div class="col-md-8">
-      forym here
+        <div class="container">
+            <div class="row" *ngFor="let post of posts">
+                    <div class="col-lg-12 py-3 mb-3 card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2">
+                                    <avatar class="avatar" [size]="50" [name]="post.author" [displayType]="'circle'"></avatar>
+                                </div>
+                                <div class="col-10">
+                                        <h3 class="author-info display-5">
+                                            {{ post.author }}
+                                            <span class="date d-block">{{ post.date | date }}</span>
+                                        </h3>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col">
+                                    <h3 class="post-title display-5">{{ post.title }}</h3>
+                                    <p class="description text-muted">{{ post.content }}</p>
+                                    <a target="_blank" class="url d-block mb-3" [href]="post.link">{{ post.link }}</a>
+                                    <span class="d-inline-block tags">{{ post.category }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,31 @@
+.col {
+    padding: 0;
+}
+
+.d-flex {
+    flex-direction: column;
+}
+
+.avatar {
+    width: 100%;
+}
+
+.author-info {
+    text-transform: capitalize;
+}
+
+.author-info .date {
+    color: #aaa;
+    font-size: 0.5em;
+}
+
+.post-title {
+    font-weight: 700;
+}
+
+.tags {
+    background-color: #eee;
+    padding: 10px 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0, .2);
+}
