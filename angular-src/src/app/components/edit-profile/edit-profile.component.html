@@ -4,7 +4,7 @@
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Update your profile
-            <a class="btn btn-outline-info btn-rounded waves-effect btn-sm" (click)="isEdit = !isEdit">
+            <a class="btn btn-primary btn-rounded" (click)="isEdit = !isEdit">
                 <span *ngIf="isEdit; else noEdit">Edit</span>
                 <ng-template #noEdit>Hide</ng-template>
             </a>

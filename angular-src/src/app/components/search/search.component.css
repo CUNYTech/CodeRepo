@@ -27,14 +27,19 @@
 
 
 /* Form Styles */
+.form-control{
+  border-radius: 0;
+}
 
 .form-control:focus {
     box-shadow: none !important;
 }
 
-.form-control.search-input[type=text],
+.form-control.search-input[type=text]{
+  color: #333;
+}
 .form-control.search-input::placeholder {
-    color: #333;
+    color: #bdbdbd;
 }
 
 

@@ -8,4 +8,16 @@ label {
 }
 
 .card-title {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+
+.card-title a.btn{
+  margin-left: auto;
+}
+
+.card-header {
+  background-color: #fff;
 }
