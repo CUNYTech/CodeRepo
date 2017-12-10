@@ -52,6 +52,14 @@
     transition: .5s ease;
 }
 
+button.close:hover{
+  cursor: pointer;
+}
+
+.btn .fa{
+  font-size: 1.2em;
+  margin-top: -5px;
+}
 
 /* List-Group Row Styles */
 
