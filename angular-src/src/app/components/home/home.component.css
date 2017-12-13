@@ -49,14 +49,6 @@ hr {
 .fa{
   font-size: 3em;
   color: #fff;
-  text-shadow: rgb(48, 117, 165) 0px 0px 0px, 
-              rgb(50, 123, 173) 1px 1px 0px, 
-              rgb(53, 129, 182) 2px 2px 0px, 
-              rgb(55, 136, 191) 3px 3px 0px, 
-              rgb(58, 142, 200) 4px 4px 0px, 
-              rgb(60, 148, 209) 5px 5px 0px, 
-              rgb(63, 154, 217) 6px 6px 0px, 
-              rgb(65, 161, 226) 7px 7px 0px;
 }
 .fa-con{
   display: flex;
@@ -66,6 +58,16 @@ hr {
   width: 100px;
   border-radius: 50%;
   background-color: #44A7EB;
+}
+.card.home-card .fa{
+  text-shadow: rgb(48, 117, 165) 0px 0px 0px, 
+  rgb(50, 123, 173) 1px 1px 0px, 
+  rgb(53, 129, 182) 2px 2px 0px, 
+  rgb(55, 136, 191) 3px 3px 0px, 
+  rgb(58, 142, 200) 4px 4px 0px, 
+  rgb(60, 148, 209) 5px 5px 0px, 
+  rgb(63, 154, 217) 6px 6px 0px, 
+  rgb(65, 161, 226) 7px 7px 0px;
 }
 .home-col-title{
   margin: 1em 0 .5em 0;
