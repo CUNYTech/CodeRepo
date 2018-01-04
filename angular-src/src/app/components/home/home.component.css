@@ -121,6 +121,9 @@ hr {
   bottom: 0;
   align-self: center;
 }
+.container.home-info-con .row{
+  align-items: flex-start;
+}
 /* .text-block {
   padding-top: 150px;
 } */
