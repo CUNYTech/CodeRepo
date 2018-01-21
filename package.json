@@ -22,6 +22,7 @@
   "author": "Alexander Melo",
   "license": "ISC",
   "devDependencies": {
-    "@angular/cli": "^1.5.0"
+    "@angular/cli": "^1.5.0",
+    "handlebars": "^1.3.0"
   }
 }
